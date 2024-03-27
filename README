@@ -1,0 +1,14 @@
+/*
+COMPONENT STRUCTURE
+
+EXPORT COMPONENT = { ... }
+
+    KEYS:
+
+        domID -> 'class'
+        parentID -> '.nameOfParent' :: DEFAULT = 'main'
+        elementType -> 'type' :: DEFAULT = 'div'
+
+        render -> FUNC()
+        preRender -> () => cManager.renderComponent( component, instance)
+*/
