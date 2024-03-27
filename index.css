@@ -13,8 +13,8 @@
 }
 
 body {
-    background: var(--mainBG);
-    color: var( --textColor);
+    /* background: var(--mainBG);
+    color: var( --textColor); */
 }
 
 button {
@@ -25,7 +25,7 @@ button {
 input {
     padding: 10px;
     background: unset;
-    color: var( --textColor);
+    /* color: var( --textColor); */
 }
 
 input[type="text"] {

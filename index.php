@@ -53,9 +53,9 @@
                 $URL = $_SERVER['REQUEST_URI'];
                 $view = ltrim(parse_url($URL, PHP_URL_PATH), '/');  
                 
-                if( file_exists( "$path/comp_$view")) 
+                if( file_exists( "$path/$view")) 
                 {
-                    addComponents( $path, "comp_$view");
+                    addComponents( $path, "$view");
                 }
                 else 
                 {
