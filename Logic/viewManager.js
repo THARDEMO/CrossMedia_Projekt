@@ -7,12 +7,12 @@ export function viewManager() {
 
     //FORCE LOGINPAGE
     if(!checkPassage()) {
-        if( location != `${origin}/login`) location.href = `${origin}/login`;
+        if( location != `${origin}/start`) location.href = `${origin}/start`;
     }
 
     //REDIRECT LOGIN & ORIGIN WHEN LOGGED IN
     if(checkPassage()){
-        if( location.href === `${origin}/login` || location.href === `${origin}/`) location.href = `${origin}/home`;
+        if( location.href === `${origin}/start` || location.href === `${origin}/`) location.href = `${origin}/home`;
     }
 
 }

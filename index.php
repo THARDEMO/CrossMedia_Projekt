@@ -1,22 +1,19 @@
 <?php
-    $ignore_files = [".DS_Store", ".", "..", "cManager.js"];
-    
+    $ignore_files = [".DS_Store", ".", "..", "cManager.js"];    
     $path = "./components";
-    $components_dir = array_diff(scandir($path), $ignore_files);
 
-    function importStyles() 
+    function importStyles( $path ) 
     {
-        global $components_dir;
-        global $path;
+
         global $ignore_files;
-        foreach( $components_dir as $component_dir) 
+
+        $files = array_diff( scandir( "$path"), $ignore_files);
+        foreach( $files as $potential_style) 
         {
-            $files = array_diff( scandir( "$path/$component_dir"), $ignore_files);
-            foreach( $files as $potential_style) 
-            {
-                if( !checkExtention('css', "$path/$component_dir/$potential_style")) continue;
-                echo "<link rel='stylesheet' href='$path/$component_dir/$potential_style'>";
-            }
+            if( is_dir("$path/$potential_style")) importStyles( "$path/$potential_style");
+
+            if( !checkExtention('css', "$path/$potential_style")) continue;
+            echo "<link rel='stylesheet' href='$path/$potential_style'>";
         }
 
     }
@@ -36,14 +33,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>COPYSTATION</title>
         <link rel="stylesheet" href="./index.css">
-        <?php echo importStyles() ?>
+        <?php echo importStyles( $path ) ?>
     </head>
 
     <body>
         <main id="wrapper"></main>
 
         <script type="module">
-            import { viewManager } from './appLogic/viewManager.js';
+            import { viewManager } from './Logic/viewManager.js';
 
             viewManager();
 
@@ -81,7 +78,8 @@
                 }
             ?>
 
-            Promise.all( COMPONENTS.map( comp => import( comp)) )
+
+            Promise.all( COMPONENTS.map( component => import( component )))
             .then( components => components.forEach( module => {
 
                     if( !module.component) return

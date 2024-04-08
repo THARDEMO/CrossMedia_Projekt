@@ -1,0 +1,24 @@
+#loginPage {
+    position: absolute;
+    width: 85svw;
+    height: fit-content;
+    background: rgb(115, 115, 115);
+    padding: 25px;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+
+    /* background-blend-mode: blur; */
+
+}
+
+#loginForm {
+    display: grid;
+    max-width: 600px;
+    gap: 10px;
+    /* background: red; */
+
+ 
+}

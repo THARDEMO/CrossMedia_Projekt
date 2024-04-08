@@ -1,4 +1,4 @@
-export function router( page, params = null, DOM ) {
+export function router( page, DOM, params = null) {
 
     const origin = window.location.origin;
     const location = window.location;

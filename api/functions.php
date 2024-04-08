@@ -51,6 +51,4 @@ function save_file_data ($file_path, $data) {
     return true;
 }
 
-
-
 ?>

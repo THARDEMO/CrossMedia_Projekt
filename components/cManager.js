@@ -2,13 +2,14 @@ const queue = {};
 
 export function renderComponent(component, instance) {
     
-    const { domID, elementType = 'div', parentID = 'main'} = component;
-    let container = document.querySelector( parentID) ? document.querySelector( parentID) : null;
+    const { domID, elementType = 'div', parentID = 'wrapper'} = component;
+    let container = document.getElementById( parentID) ? document.getElementById( parentID) : null;
     
     if( !container) return QueueComponent( component, instance);
     
     const DOM = document.createElement( elementType);
-    DOM.classList.add( domID);
+    
+    if( domID) DOM.id = domID;
 
     component.render( DOM, instance);
     container.append( DOM);
@@ -32,7 +33,7 @@ function resolveQueue() {
     
     for( const container in queue) {
     
-        if( !document.querySelector( container)) continue;
+        if( !document.getElementById( container)) continue;
         
         for( const [ I, C ] of queue[container].entries()) {
             

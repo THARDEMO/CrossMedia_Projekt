@@ -1,13 +1,13 @@
 import * as cManager from '../../cManager.js';
-import * as STATE from '../../../appLogic/state.js'
-import { PubSub } from '../../../appLogic/PubSub.js'
+import * as STATE from '../../../Logic/state.js'
+import { PubSub } from '../../../Logic/PubSub.js'
 
-export const component = {
+export const LF = {
     domID: 'loginForm',
-    parentID: '.loginPage',
+    parentID: 'loginPage',
     elementType: 'form',
 
-    preRender: () => cManager.renderComponent( component),
+    preRender: () => cManager.renderComponent( LF),
     render
 }
 
