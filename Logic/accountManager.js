@@ -8,7 +8,6 @@ export const ACCOUNT = {
     logout,
 }
 
-
 const path = '../api/account/';
 
 async function login({ username, password }) {
@@ -50,7 +49,7 @@ async function register( {username, password}) {
     PubSub.publish
     ({
         event: 'LR::success',
-        detail: null,
+        detail: response,
     });
 
 }

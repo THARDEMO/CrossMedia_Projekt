@@ -1,10 +1,7 @@
 import * as cManager from '../../cManager.js';
-import * as STATE from '../../../Logic/state.js';
 import { ACCOUNT } from '../../../Logic/accountManager.js';
-import { LF } from './loginForm.js';
 import { PubSub } from '../../../Logic/PubSub.js';
 
-// console.log( ACCOUNT)
 
 export const LR = {
     domID: 'loginPage',
@@ -64,7 +61,7 @@ function render( DOM ) {
     PubSub.subscribe
     ({
         event: 'LR::success',
-        listener: ( detail ) => displayMessage( successDOM, detail ),
+        listener: ( detail ) => displayMessage( successDOM, detail.message),
     })
 
     function displayMessage( container, message ) {

@@ -5,6 +5,10 @@ const path = '../api/';
 
 let STATE = {
     loginKey: () => localStorage.getItem( 'keyOfPassage'),
+    test: [
+        {id: 1},
+        {id: 2},
+    ]
 };
 
 export async function update( data ) {
@@ -49,55 +53,54 @@ export async function update( data ) {
     });
 }
 
-export async function get( data ) {
-    const { entity, fields = null, type_id = null} = data;
+export async function Get( data ) {
+    const { entity, id = null, refresh = false } = data
 
-    if( !STATE[entity] || STATE[entity].id != fields) {
-        
-        let rqstString = `${path}GET.php?entity=${entity}&fields=${fields}`;
-        if( type_id) rqstString += `&type_id=${type_id}`;
+    if( STATE[entity] && !refresh) {
+        //RETURNS EXISTING DATA ON CLIENT
+        if( !id) return cloneArrayOfObjects( STATE[entity]);
 
-        const getDB = new Request( rqstString);
-        const response = await fetcher( getDB)
-        STATE[ entity ] = response; 
+        //RETURNS SPECIFIC ROW OF DATA ON CLIENT
+        const instance = STATE[entity].find( row => row.id === id);
+        return cloneArrayOfObjects( [instance]);
     }
-
-    PubSub.publish
-    ({
-        event: 'STATE::sending',
-        detail: {entity: entity, ...STATE[entity]},
-    });
-
-}
-
-export const currentUserID = () => JSON.parse(checkPassage());
-
-
-//EXEPTIONS LOGIN / LOGOUT
-export const checkPassage = () => STATE.loginKey();
-export async function login({ username, password }) {
-
-    const loginRqst = new Request( `${path}login.php`, {
-        method: 'POST',
-        body: JSON.stringify({
-            username: username,
-            password: password,
-        })
-    });
     
-    const response = await fetcher( loginRqst );
-    
+    //NO DATA ON CLIENT OR REFRESH CLIENT DATA
+    let rqstString = `${path}GET.php?entity=${entity}`;
+    if( id) rqstString += `&id=${id}`;
+
+    const rqst = new Request( rqstString);
+    const response = await fetcher( rqst );
+
     if( !response) return console.log( 'error');
 
-    localStorage.setItem( 'keyOfPassage', JSON.stringify( response ));
+    //RETURN NEWLY REFRESHED WHOLE ENTITY
+    if( !id ) {
+        STATE[entity] = response;
+        return cloneArrayOfObjects( STATE[entity]);
+    }
 
-    PubSub.publish
-    ({
-        event: 'STATE::LoggedIn',
-        detail: null,
-    });
+    //RETURN NEWLY REFRESHED SPECIFIC ROW
+    let index = STATE[entity].indexOf( row => row.id === id);
+    STATE[entity].splice( index, 1);
+    STATE[entity].splice( index, 0, response);
+
+    return cloneArrayOfObjects( [STATE[entity][index]]);
 }
-export function logout() {
-    localStorage.clear();
-    location.reload();
+
+function cloneArrayOfObjects( arrayOfObjects ) {
+    return [...arrayOfObjects.map( obj => { return {...obj}})]
 }
+// (async function(){
+    
+//    let response = await Get( {
+//         entity: 'test',
+//         refresh: true,
+//     })
+
+//     console.log(response);
+
+// })()
+
+export const currentUserID = () => JSON.parse(checkPassage());
+export const checkPassage = () => STATE.loginKey();

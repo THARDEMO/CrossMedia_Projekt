@@ -52,6 +52,6 @@
         send_JSON( ['message' => 'Error during registration', 500]);
     }
   
-    send_JSON( ['message' => "Register complete $username"]);
+    send_JSON( ['message' => "Registration complete $username, continue to Login"]);
 
 ?>

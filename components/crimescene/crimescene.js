@@ -18,7 +18,7 @@ function render( DOM ) {
     DOM.append( button);
 
 
-    console.log( STATE);
+    STATE.get( 'messages');
 }
 
 

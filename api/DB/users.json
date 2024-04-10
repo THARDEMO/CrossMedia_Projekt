@@ -13,5 +13,15 @@
         "id": "02456789",
         "username": "test",
         "password": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
+    },
+    {
+        "id": "01234789",
+        "username": "DeoHard",
+        "password": "d938aa664643102fdec4c8f6d209271a662b2f3525e24127daab55fbbce21898"
+    },
+    {
+        "id": "01234678",
+        "username": "Choso",
+        "password": "bf4b365e39434a198272cea53cb0fdc6d4c4eb6fb31cb9ac410fcf379e0f04fe"
     }
 ]
