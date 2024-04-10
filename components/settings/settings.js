@@ -1,4 +1,5 @@
 import * as cManager from '../cManager.js'
+import { ACCOUNT } from '../../Logic/accountManager.js';
 
 export const component = {
     domID: 'Settings',
@@ -11,5 +12,8 @@ export const component = {
 function render( DOM ) {
 
     DOM.innerHTML = component.domID;
+    DOM.innerHTML += '<button>Logga Ut</button>'
 
+
+    DOM.querySelector( 'button').onclick = () => ACCOUNT.logout(); 
 }
