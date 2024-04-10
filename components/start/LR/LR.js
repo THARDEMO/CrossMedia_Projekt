@@ -1,6 +1,10 @@
 import * as cManager from '../../cManager.js';
+import * as STATE from '../../../Logic/state.js';
+import { ACCOUNT } from '../../../Logic/accountManager.js';
 import { LF } from './loginForm.js';
 import { PubSub } from '../../../Logic/PubSub.js';
+
+// console.log( ACCOUNT)
 
 export const LR = {
     domID: 'loginPage',
@@ -24,8 +28,8 @@ function render( DOM ) {
             <button id="closeLR">X</button>
         </div>
         <form id="LR-form">
-            ${returnInputHTML('text', 'Användare')}
-            ${returnInputHTML('password', 'Lösenord')}
+            ${returnInputHTML('text', 'Användare', 'username')}
+            ${returnInputHTML('password', 'Lösenord', 'password')}
             <div class="feedbackMessages">
                 <p style="color:red" class="error"></p>
                 <p style="color:lightgreen" class="success"></p>
@@ -37,24 +41,36 @@ function render( DOM ) {
     secondaryActionMessage( DOM );
     DOM.querySelector( '#closeLR').onclick = () => DOM.remove();
 
+
+    const errorDOM = DOM.querySelector( '.error');
+    const successDOM = DOM.querySelector( '.success');
     //ERRORS
     PubSub.subscribe
     ({
         event: 'LR::error',
-        listener: ( detail ) => {
-            DOM.querySelector( '.error').textContent = detail;
-            setTimeout( () => DOM.querySelector( '.error').textContent = null, 5000)
-        },
+        listener: ( detail ) => displayMessage( errorDOM, detail),
+    })
+    PubSub.subscribe
+    ({
+        event: 'ERROR::ReachServer',
+        listener: ( { response, message }) => displayMessage( errorDOM, `${message}: ${response.status}, try again.`)
+    })
+    PubSub.subscribe
+    ({
+        event: 'ERROR::fetcher',
+        listener: (detail) => displayMessage( errorDOM, detail)
     })
     //SUCCESS
     PubSub.subscribe
     ({
         event: 'LR::success',
-        listener: ( detail ) => {
-            DOM.querySelector( '.success').textContent = detail
-            setTimeout( () => DOM.querySelector( '.success').textContent = null, 5000)
-        },
+        listener: ( detail ) => displayMessage( successDOM, detail ),
     })
+
+    function displayMessage( container, message ) {
+        container.textContent = message;
+        setTimeout( () => container.textContent = null, 5000)
+    }
 }
 
 function secondaryActionMessage( parentDOM ) {
@@ -76,11 +92,11 @@ function secondaryActionMessage( parentDOM ) {
     parentDOM.append( DOM );
 }
 
-function returnInputHTML( type, label, classList) {
+function returnInputHTML( type, label, target, classList) {
     return `
        <div class="inputContainer">
             <label for="input[${label}]">${label}</label>
-            <input type="${type}" name="${label}"></input> 
+            <input type="${type}" name="${label}" data-target="${target}"></input> 
        </div>
     `;
 }
@@ -90,12 +106,17 @@ function submitButton( formDOM ) {
     const DOM = document.createElement( 'button');
     DOM.type = 'submit';
 
+    const fieldOBJ = {};
+
     switch( LR.page) {
         case 'Logga In': 
             DOM.textContent = 'Logga in';
             DOM.onclick = (e) => {
                 e.preventDefault();
                 if( !controlInputs()) return;
+
+                document.querySelectorAll( "form input").forEach( field => fieldOBJ[field.dataset.target] = field.value)
+                ACCOUNT.login( fieldOBJ);
             }
         break;
         case 'Registrera Konto': 
@@ -104,7 +125,9 @@ function submitButton( formDOM ) {
                 e.preventDefault();
                 if(!controlInputs()) return;
 
-                
+                document.querySelectorAll( "form input").forEach( field => fieldOBJ[field.dataset.target] = field.value)
+
+                ACCOUNT.register( fieldOBJ);
             }
         break;
     }
@@ -119,7 +142,7 @@ function controlInputs() {
     
     for( const input of inputs) {
         const inputContent = input.value;
-        console.log( inputContent, input);
+        // console.log( inputContent, input);
         
         if( inputContent.length < 3) {
             PubSub.publish

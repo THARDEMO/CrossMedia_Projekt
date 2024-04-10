@@ -2,21 +2,33 @@ import { PubSub } from "./PubSub.js";
 
 export async function fetcher( rqst ) {
    
-   const response = await fetch( rqst );
-   if( response.ok ) {
+   try {
+      const response = await fetch( rqst );
+      if( response.ok ) {
 
-      // const data = await response.json();
-      return await response.json();
+         return await response.json();
+      }
+
+
+      const { message } = await response.json();
+
+      PubSub.publish
+      ({
+         event: 'ERROR::ReachServer',
+         detail: {
+            response: response,
+            message: message,
+         },
+      })
+      
+
+   } catch (error) {
+
+      PubSub.publish
+      ({
+         event: 'ERROR::fetcher',
+         detail: error,
+      });
+
    }
-   
-   // return await fetcher( rqst);
-
-   PubSub.publish
-   ({
-      event: 'ERROR::fetchingResource',
-      detail: response,
-   })
-
-   console.log( console.log( response));
-   
 }

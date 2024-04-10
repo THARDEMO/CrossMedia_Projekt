@@ -1,12 +1,11 @@
 import { fetcher } from './fetcher.js';
 import { PubSub } from './PubSub.js';
 
-const path = '../api/'
+const path = '../api/';
 
 let STATE = {
     loginKey: () => localStorage.getItem( 'keyOfPassage'),
 };
-
 
 export async function update( data ) {
     const { entity, fields = [], method = 'POST', file = null} = data;
@@ -78,12 +77,20 @@ export const currentUserID = () => JSON.parse(checkPassage());
 export const checkPassage = () => STATE.loginKey();
 export async function login({ username, password }) {
 
-    const loginRqst = new Request( `${path}login.php?username=${username}&password=${password}`);
-    const response = await fetcher( loginRqst )
+    const loginRqst = new Request( `${path}login.php`, {
+        method: 'POST',
+        body: JSON.stringify({
+            username: username,
+            password: password,
+        })
+    });
+    
+    const response = await fetcher( loginRqst );
     
     if( !response) return console.log( 'error');
 
     localStorage.setItem( 'keyOfPassage', JSON.stringify( response ));
+
     PubSub.publish
     ({
         event: 'STATE::LoggedIn',
