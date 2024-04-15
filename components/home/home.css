@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../../RetroFont/VT323-Regular.ttf');
+}
+
+nav {
+
+    background-color: blue;
+    color: white;
+    height: 40px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav>* {
+    font-family: 'CustomFont';
+    font-size: 25px;
+}
+
+#homescreen {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#homescreen>button {
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: start;
+    font-family: 'CustomFont';
+    font-size: 15px;
+
+}

@@ -4,11 +4,13 @@ export const component = {
     domID: 'Notes',
     elementType: 'section',
 
-    preRender: () => cManager.renderComponent( component),
+    preRender: () => cManager.renderComponent(component),
     render
 }
 
-function render( DOM ) {
+function render(DOM) {
+
+
 
     DOM.innerHTML = component.domID;
 
