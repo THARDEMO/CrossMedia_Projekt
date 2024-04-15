@@ -1,6 +1,18 @@
 [
     {
-        "crimesceneID": 0,
-        "userID": 0
+        "crime_id": 1,
+        "user_id": 7
+    },
+    {
+        "crime_id": 3,
+        "user_id": 7
+    },
+    {
+        "crime_id": 3,
+        "user_id": 3
+    },
+    {
+        "crime_id": 8,
+        "user_id": 7
     }
 ]

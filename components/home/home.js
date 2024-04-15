@@ -12,6 +12,7 @@ export const component = {
 
 function render( DOM ) {
 
+
     for( const button in structure.apps) {
         const { name, route } = structure.apps[button];
 

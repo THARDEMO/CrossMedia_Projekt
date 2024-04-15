@@ -75,7 +75,7 @@ export async function Get( data ) {
     if( !response) return console.log( 'error');
 
     //RETURN NEWLY REFRESHED WHOLE ENTITY
-    if( !id ) {
+    if( !refresh) {
         STATE[entity] = response;
         return cloneArrayOfObjects( STATE[entity]);
     }
@@ -91,6 +91,11 @@ export async function Get( data ) {
 function cloneArrayOfObjects( arrayOfObjects ) {
     return [...arrayOfObjects.map( obj => { return {...obj}})]
 }
+
+export const currentUserID = () => JSON.parse(checkPassage());
+export const checkPassage = () => STATE.loginKey();
+
+
 // (async function(){
     
 //    let response = await Get( {
@@ -101,6 +106,3 @@ function cloneArrayOfObjects( arrayOfObjects ) {
 //     console.log(response);
 
 // })()
-
-export const currentUserID = () => JSON.parse(checkPassage());
-export const checkPassage = () => STATE.loginKey();

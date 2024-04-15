@@ -8,13 +8,12 @@
 
     if( !isset( $_GET[ 'entity'])) 
     {
-        send_JSON( ['message' => 'Missing Keys'], 400);
+        send_JSON( ['message' => 'Missing Params'], 400);
     }
 
     $entity = $_GET[ 'entity'];
     $id = false;
 
-    $type_id = 'id';
     if( isset( $_GET['id'])) $id = $_GET['id'];
 
     $path = "./actions/$entity.php";

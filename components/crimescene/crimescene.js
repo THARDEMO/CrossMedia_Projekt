@@ -9,7 +9,7 @@ export const component = {
     render
 }
 
-function render( DOM ) {
+async function render( DOM ) {
 
     DOM.innerHTML = component.domID;
 
@@ -18,14 +18,5 @@ function render( DOM ) {
     DOM.append( button);
 
 
-    STATE.get( 'messages');
-}
-
-
-function renderButton () {
-
-    const DOM = document.createElement( 'button');
-
-    return DOM
-
+    const crimescene = await STATE.Get( {entity: 'crimescenes',id: 1});
 }
