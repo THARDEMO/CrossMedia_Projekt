@@ -1,0 +1,94 @@
+:root {
+    --terminalTxt: #7d7d7d;
+    --terminalBg: #1c1c1c;
+    --terminalHl: #191919;
+    --terminalConnected: #4747b2;
+    --terminalLoading: #a7bdbc;
+    --terminalError: #9e3434;
+    --terminalSuccess: #349e40;
+
+}
+
+#CrimeScenes {
+    height: 100%;
+    overflow: scroll;
+    padding: 1rem;
+    
+    font-family: 'customfont';
+    
+    background: var(--terminalBg);
+    color: var(--terminalTxt);
+
+    & #terminalContainer {
+        list-style: none;
+        padding: unset;
+
+        & li {
+            font-size: 16px;
+
+            & .highlighted-terminal {
+                font-weight: bold;
+            }
+            
+            & .terminal-connected {
+                color: var(--terminalConnected);
+            }
+            & .terminal-loading {
+                color: var(--terminalLoading);
+            }
+            & .terminal-error {
+                color: var(--terminalError);
+            }
+            & .terminal-success {
+                color: var(--terminalSuccess);
+            }
+        }
+        & li:last-child {
+            /* background: rgb(25, 25, 25); */
+            animation: TerminalHighlight .2s;
+        }
+        & li:last-child::before {
+            content: '_ '
+        }
+
+        & form {
+            display: flex;
+            justify-content: space-between;
+            
+            & input {
+                width: 100%;
+                font-family: 'customFont';
+                padding: unset;
+                margin: 3px 0;
+                letter-spacing: 2px;
+                font-size: 20px;
+
+
+                border: unset;
+                color: var(--terminalTxt);
+            }
+
+            & input:focus {
+                background: var(--terminalHl);
+            }
+
+            & button {
+                font-size: 20px;
+                color: var(--terminalTxt);
+                font-family: 'customFont';
+                background: none;
+            }
+        }
+    }
+      
+}
+
+@keyframes TerminalHighlight {
+    from {
+        background: rgba(25, 25, 25, 0);
+    }
+
+    to {
+        background: var(--terminalHl);
+    }
+}

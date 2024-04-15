@@ -2,11 +2,19 @@
     {
         "id": null,
         "name": null,
+        "key_code": null,
         "type": null 
     },
     {
         "id": 1,
         "name": null,
+        "key_code": "QWERTY",
+        "type": null 
+    },
+    {
+        "id": 2,
+        "name": null,
+        "key_code": "ABCDEF",
         "type": null 
     }
 ]

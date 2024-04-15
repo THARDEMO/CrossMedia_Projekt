@@ -53,6 +53,21 @@ export async function update( data ) {
     });
 }
 
+export async function Post( component, data ) {
+    
+    const rqst = new Request( `${path}POST.php`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify( data)
+    })
+
+    const response = await fetcher( rqst);
+    
+    if(!response) return console.log( 'error')
+
+    return response;
+}
+
 export async function Get( data ) {
     const { entity, id = null, refresh = false } = data
 

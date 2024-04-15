@@ -15,6 +15,7 @@ export function renderComponent(component, instance) {
     container.append( DOM);
 
     resolveQueue();
+
 }
 
 

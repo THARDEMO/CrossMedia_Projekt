@@ -1,8 +1,9 @@
 <?php
 
+    $path = "./DB/crimescene.json";
+
     if( $request_method === 'GET')
     {
-        $path = "./DB/crimescene.json";
         $all_crimescenes = get_file_data( $path);
 
         foreach( $all_crimescenes as $crimescene) 
@@ -16,6 +17,21 @@
 
     if( $request_method === 'POST')
     {
+        if( isset( $request_data['key_code']))
+        {
+            $code = $request_data['key_code'];
+            $all_crimescenes = get_file_data( $path);
+
+            foreach( $all_crimescenes as $crimescene) 
+            {
+                if( $crimescene['key_code'] != $code) continue;
+                send_JSON( ["crime_id" => $crimescene['id']]);
+            }
+
+            send_JSON( ['message' => 'No matching crimescene was found'], 404);
+        }
+
+
         send_JSON( ["message" => "Working on POST"]);
     }
 
