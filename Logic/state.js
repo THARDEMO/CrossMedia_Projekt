@@ -104,6 +104,7 @@ export async function Get( data ) {
 }
 
 function cloneArrayOfObjects( arrayOfObjects ) {
+    if( arrayOfObjects.length <= 1) return {...arrayOfObjects[0]}
     return [...arrayOfObjects.map( obj => { return {...obj}})]
 }
 

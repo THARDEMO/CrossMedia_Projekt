@@ -5,14 +5,20 @@ export function viewManager() {
     const origin = window.location.origin;
     const location = window.location;
 
+    const queryParams = new URLSearchParams(window.location.search);
+    const pageParam = queryParams.get('view');
+
     //FORCE LOGINPAGE
     if(!checkPassage()) {
-        if( location != `${origin}/start`) location.href = `${origin}/start`;
+
+        //NOTE: ERROR
+        if( pageParam != `start`) location.href = `${origin}/?view=start`;
     }
 
     //REDIRECT LOGIN & ORIGIN WHEN LOGGED IN
     if(checkPassage()){
-        if( location.href === `${origin}/start` || location.href === `${origin}/`) location.href = `${origin}/home`;
+        if( pageParam === 'start' || !pageParam) location.href = `${origin}?view=home`;
+        // if( location.href === `${origin}?view=home` || location.href === `${origin}`) location.href = `${origin}?view=home`;
     }
 
 }

@@ -39,24 +39,30 @@
     <body>
         <main id="wrapper"></main>
 
+
         <script type="module">
             import { viewManager } from './Logic/viewManager.js';
-
             viewManager();
 
             let COMPONENTS = [];
             <?php 
                     
-                $URL = $_SERVER['REQUEST_URI'];
-                $view = ltrim(parse_url($URL, PHP_URL_PATH), '/');  
-                
-                if( file_exists( "$path/$view")) 
+                // $URL = $_SERVER['REQUEST_URI'];
+                // $view = parse_url($URL, PHP_URL_PATH);  
+
+
+                if( isset( $_GET[ 'view']))
                 {
-                    addComponents( $path, "$view");
-                }
-                else 
-                {
-                    echo "COMPONENTS.push('$path/404/404.js'); \n";
+                    $view = $_GET['view'];  
+    
+                    if( file_exists( "$path/$view")) 
+                    {
+                        addComponents( $path, "$view");
+                    }
+                    else 
+                    {
+                        echo "COMPONENTS.push('$path/404/404.js'); \n";
+                    }
                 }
 
                 function addComponents( $path, $current_dir)

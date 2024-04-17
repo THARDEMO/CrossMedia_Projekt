@@ -19,6 +19,10 @@
     background: var(--terminalBg);
     color: var(--terminalTxt);
 
+    & video {
+        width: 100%;
+    }
+
     & #terminalContainer {
         list-style: none;
         padding: unset;
