@@ -1,6 +1,7 @@
-import * as STATE from '../../Logic/state.js';
-import * as cManager from '../cManager.js';
+import * as STATE from '../../../Logic/state.js';
+import * as cManager from '../../cManager.js';
 import { structure } from './structure.js';
+import { writeTerminalMessages } from '../../../identities/terminalMessages.js';
 
 export const terminal = {
     domID: 'terminalContainer',
@@ -32,8 +33,10 @@ function terminalLogin( DOM ) {
         if( !code) return;
         form.remove();
 
-        DOM.innerHTML += `<li> <span class="highlighted-terminal terminal-connected">${code}</span></li>`;
-
+        DOM.innerHTML += `
+            <li> <span class="highlighted-terminal terminal-connected">${code}</span></li>
+            <li> <span class="highlighted-terminal terminal-loading">Sending pre requests . . .</span></li>
+        `;
 
         /// POST TO SERVER
         const resource = await STATE.Post( 'terminal', {
@@ -45,37 +48,8 @@ function terminalLogin( DOM ) {
         if( !resource) return writeTerminalMessages( DOM, structure.terminalError, terminalLogin);
 
         writeTerminalMessages( DOM, structure.terminalSuccess, () => {
-            window.location = window.location.origin + `/crimescene?id=${resource.crime_id}`;
+            window.location = window.location.origin + `/?view=crimescene&id=${resource.crime_id}`;
         })
 
     }
-}
-
-function writeTerminalMessages( DOM, terminalStructure, callback) {
-    const terminalStages = Object.keys( terminalStructure);
-    let stage = 0;
-    setInterval(() => {
-
-        if( stage >= terminalStages.length) {
-            ClearAllIntervals();
-            callback( DOM );
-            return
-        }
-        
-        const messageArray = terminalStructure[terminalStages[stage]];
-        
-        const li = document.createElement( 'li');
-        messageArray.forEach( message => {
-            
-            li.innerHTML += message + ' ';
-        });
-        DOM.append( li);
-        
-        stage++
-
-    }, 450);
-}
-
-function ClearAllIntervals() {
-    for (var i = 1; i < 99999; i++) window.clearInterval(i);
 }

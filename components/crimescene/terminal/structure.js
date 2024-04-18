@@ -23,5 +23,5 @@ export const structure = {
         success: ['<span class="highlighted-terminal terminal-success">Access granted to crimescene</span>'],
         redirecting: ['<span class="highlighted-terminal terminal-loading">Redirecting . . .</span>']
 
-    }
+    },
 }
