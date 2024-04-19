@@ -1,0 +1,19 @@
+.notes {
+    width: 90%;
+    height: auto;
+    background-color: gray;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#Notes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}

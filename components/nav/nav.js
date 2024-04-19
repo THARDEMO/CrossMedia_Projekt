@@ -1,6 +1,5 @@
 import { router } from '../../identities/router.js';
 
-
 export function NavComp(parentDOM) {
     const nav = document.createElement("nav")
     parentDOM.append(nav)
