@@ -1,6 +1,7 @@
 import * as cManager from '../cManager.js'
 import * as STATE from '../../Logic/state.js';
 
+import { NavComp } from '../../identities/nav/nav.js';
 import { terminal } from './terminal/terminal.js';
 import { interrogations } from './interrogation/interrogation.js';
 
@@ -13,6 +14,7 @@ export const component = {
 }
 
 async function render(DOM) {
+    NavComp( DOM );
 
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');

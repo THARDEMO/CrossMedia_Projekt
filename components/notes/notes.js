@@ -1,5 +1,5 @@
 import * as cManager from '../cManager.js'
-import { NavComp } from '../nav/nav.js';
+import { NavComp } from '../../identities/nav/nav.js';
 import { textBuilder } from './noteBuilder.js';
 
 export const component = {

@@ -34,6 +34,9 @@
         <title>CrossMedia Project</title>
         <link rel="stylesheet" href="./index.css">
         <?php echo importStyles( $path ) ?>
+        <?php echo importStyles( "./identities" ) ?>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css">
     </head>
 
     <body>

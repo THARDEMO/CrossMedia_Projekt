@@ -1,0 +1,46 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: grid;
+    height: var( --navHeight);
+    width: 100vw;
+
+    background-color: #222676;
+    color: white;
+    font-family: 'CustomFont';
+    font-size: 25px;
+
+
+    & .PoliceIcon {
+        height: 40px;
+    }
+    
+    & .nav--flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0 1rem;
+        width: inherit;
+    }
+
+    & #HomePageBtn {
+        align-self: end;
+        cursor: pointer;
+        
+        padding: 0 1rem;
+        font-size: 18px;
+
+        background: var( --mainBG);
+        color: black;
+    }
+
+}
+
+/* nav>* {
+    font-family: 'CustomFont';
+    font-size: 25px;
+} */
+

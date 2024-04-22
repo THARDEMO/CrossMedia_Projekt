@@ -1,7 +1,7 @@
 import * as cManager from '../cManager.js';
 import { structure } from './structure.js';
 import { router } from '../../identities/router.js';
-import { NavComp } from '../nav/nav.js';
+import { NavComp } from '../../identities/nav/nav.js';
 
 
 
@@ -28,9 +28,6 @@ function render(DOM) {
 
         router(route, buttonDOM);
     }
-
-
-
 
 
 }

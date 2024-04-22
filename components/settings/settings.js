@@ -1,5 +1,6 @@
 import * as cManager from '../cManager.js'
 import { ACCOUNT } from '../../Logic/accountManager.js';
+import { NavComp } from '../../identities/nav/nav.js';
 
 export const component = {
     domID: 'Settings',
@@ -10,6 +11,7 @@ export const component = {
 }
 
 function render( DOM ) {
+    NavComp();
 
     DOM.innerHTML = component.domID;
     DOM.innerHTML += '<button>Logga Ut</button>'

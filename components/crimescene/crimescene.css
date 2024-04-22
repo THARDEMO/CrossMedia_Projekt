@@ -9,13 +9,13 @@
 
 }
 
+
 #CrimeScenes {
     height: 100%;
     overflow: scroll;
     padding: 1rem;
     
     font-family: 'customfont';
-    
     background: var(--terminalBg);
     color: var(--terminalTxt);
 
