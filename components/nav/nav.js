@@ -11,7 +11,7 @@ export function NavComp(parentDOM) {
     nav.innerHTML = `<p id="HomePageBtn">Start<p/> <img class="policeNav" src ="../Images/Polisen.png"></img> <div>${Time}</div>`;
 
 
-    let HomePageBtn = document.getElementById("HomePageBtn")
+    let HomePageBtn = nav.querySelector("#HomePageBtn")
 
-    router('home', nav, HomePageBtn)
+    router('home', HomePageBtn)
 }
