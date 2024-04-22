@@ -1,5 +1,6 @@
 import * as cManager from '../cManager.js'
 import { NavComp } from '../../identities/nav/nav.js';
+import * as STATE from '../../Logic/state.js';
 import { textBuilder } from './noteBuilder.js';
 
 export const component = {
@@ -10,14 +11,18 @@ export const component = {
     render
 }
 
-function render(DOM) {
+async function render(DOM) {
 
-    NavComp(DOM)
+    NavComp()
 
-    let note = `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. `
+    const notes = await STATE.Get({
+        entity: 'notes',
+        id: 7,
+    });
+    console.log(notes)
 
-    textBuilder(note, DOM)
-    textBuilder(note, DOM)
-
+    notes.forEach(note => {
+        textBuilder(note.notes, note.timestamp, DOM)
+    });
 
 }

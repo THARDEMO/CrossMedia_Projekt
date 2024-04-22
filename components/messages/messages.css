@@ -1,15 +1,30 @@
-.notes {
-    width: 90%;
+.messageToUser {
+
+    max-width: 240px;
+    width: 240px;
     height: auto;
     background-color: gray;
     padding: 10px;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    left: 80px;
 
+}
 
+.messageFromUser {
+    max-width: 240px;
+    width: 240px;
+    height: auto;
+    background-color: gray;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 80px;
 }
 
 .time {
@@ -24,7 +39,7 @@
 
 }
 
-.noteContainer {
+.messageContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +47,7 @@
     gap: 8px;
 }
 
-#Notes {
+#Messages {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +55,7 @@
     gap: 50px;
 }
 
-.note_Time_Container {
+.message_time_Container {
     display: flex;
     justify-content: center;
     align-items: center;
