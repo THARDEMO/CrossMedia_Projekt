@@ -8,16 +8,16 @@ export const component = {
     domID: 'CrimeScenes',
     elementType: 'section',
 
-    preRender: () => cManager.renderComponent( component),
+    preRender: () => cManager.renderComponent(component),
     render
 }
 
-async function render( DOM ) {
+async function render(DOM) {
 
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
 
-    if( !id) return terminal.preRender();
+    if (!id) return terminal.preRender();
 
     switch( id ) {
         case '1': return interrogations.preRender( id );
