@@ -1,6 +1,7 @@
 import * as STATE from '../../../Logic/state.js';
 import * as cManager from '../../cManager.js';
 import { structure } from './structure.js';
+
 import { writeTerminalMessages } from '../../../identities/terminalMessages.js';
 
 export const terminal = {
@@ -14,9 +15,10 @@ export const terminal = {
 
 function render( DOM ) {
 
-    writeTerminalMessages( DOM, structure.terminal, terminalLogin);
+    writeTerminalMessages( DOM, structure.terminal, terminalLogin, DOM);
 
 } 
+
 function terminalLogin( DOM ) {
     const form = document.createElement( 'form');
     form.innerHTML = `
@@ -45,7 +47,7 @@ function terminalLogin( DOM ) {
             user_id: STATE.currentUserID()
         });
 
-        if( !resource) return writeTerminalMessages( DOM, structure.terminalError, terminalLogin);
+        if( !resource) return writeTerminalMessages( DOM, structure.terminalError, terminalLogin, DOM);
 
         writeTerminalMessages( DOM, structure.terminalSuccess, () => {
             window.location = window.location.origin + `/?view=crimescene&id=${resource.crime_id}`;

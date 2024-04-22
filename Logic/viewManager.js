@@ -18,8 +18,7 @@ export function viewManager() {
     //REDIRECT LOGIN & ORIGIN WHEN LOGGED IN
     if(checkPassage()){
         if( pageParam === 'start' || !pageParam) location.href = `${origin}?view=home`;
-        // if( location.href === `${origin}?view=home` || location.href === `${origin}`) location.href = `${origin}?view=home`;
-    }
+    } 
 
 }
 

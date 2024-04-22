@@ -1,4 +1,5 @@
 import * as cManager from '../cManager.js'
+import * as STATE from '../../Logic/state.js';
 
 export const component = {
     domID: 'Messages',
@@ -8,8 +9,11 @@ export const component = {
     render
 }
 
-function render( DOM ) {
+async function render( DOM ) {
 
     DOM.innerHTML = component.domID;
 
+    const messages = await STATE.Get({entity: 'messages', id: STATE.currentUserID()});
+
+    console.log( messages);
 }

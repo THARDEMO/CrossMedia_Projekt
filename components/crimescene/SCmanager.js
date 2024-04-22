@@ -21,7 +21,7 @@ async function render( DOM ) {
 
     switch( id ) {
         case '1': return interrogations.preRender( id );
-        default: DOM.innerHTML = `Crimescene::${id} has not been implemented yet`;
+        default: DOM.innerHTML = `Crimescene::${id} Does not exist?!?! What are you doing here officer??`;
     }
 
 }

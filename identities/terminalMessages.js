@@ -1,11 +1,11 @@
-export function writeTerminalMessages( DOM, terminalStructure, callback) {
+export function writeTerminalMessages( DOM, terminalStructure, callback, callbackParam) {
     const terminalStages = Object.keys( terminalStructure);
     let stage = 0;
     setInterval(() => {
 
         if( stage >= terminalStages.length) {
             ClearAllIntervals();
-            callback( DOM );
+            callback( callbackParam );
             return
         }
         

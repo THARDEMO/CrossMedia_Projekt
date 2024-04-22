@@ -50,6 +50,8 @@
                 // $URL = $_SERVER['REQUEST_URI'];
                 // $view = parse_url($URL, PHP_URL_PATH);  
 
+                // IDEA https://DOMAIN.com/#/component ---> negates redirects. maybe only works with js tho
+
 
                 if( isset( $_GET[ 'view']))
                 {
