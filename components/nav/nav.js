@@ -8,7 +8,7 @@ export function NavComp(parentDOM) {
     const minutes = date.getMinutes().toString().padStart(2, '0')
     const Time = (`${hours}:${minutes}`);
 
-    nav.innerHTML = `<p id="HomePageBtn">Start<p/> <img class="policeNav" src ="../Images/Polisen.png"></img> <div>${Time}</div>`;
+    nav.innerHTML = `<p id="HomePageBtn">Menu<p/> <img class="policeNav" src ="../Images/Polisen.png"></img> <div>${Time}</div>`;
 
 
     let HomePageBtn = nav.querySelector("#HomePageBtn")

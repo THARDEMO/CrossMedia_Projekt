@@ -10,6 +10,26 @@
 
 }
 
+.time {
+    width: 15%;
+    height: 15px;
+    background-color: gray;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.noteContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+}
+
 #Notes {
     display: flex;
     justify-content: center;
