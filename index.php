@@ -39,7 +39,6 @@
     <body>
         <main id="wrapper"></main>
 
-
         <script type="module">
             import { viewManager } from './Logic/viewManager.js';
             viewManager();
