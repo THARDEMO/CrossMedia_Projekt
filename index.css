@@ -8,11 +8,18 @@
     --mainBG: #d6d6d6;
     --textColor: #C7D5D6;
     --secColor: #263055;
-    --greyColor: #586078;
-    --darkGrey: #0f0f0f;
-    --CtA: #3a67aa;
 
-    --navHeight: 70px;
+
+    --policeBlue: #222676;
+    --navHeight: 90px;
+
+
+    /* FONTS _____________ */
+    --fontReg: 18px;
+    --fontSmall: 16px;
+    --fontBig: 24px;
+
+    --mainFont: 'CustomFont';
 
 }
 
@@ -76,12 +83,3 @@ input:focus {
     color: var(--CtA);
 }
 
-
-/* COMPUTER SCREENS  */
-
-/* @media ( max-width: 550px ) {
-
-    #wrapper {
-        width: 100svw;
-    }
-} */

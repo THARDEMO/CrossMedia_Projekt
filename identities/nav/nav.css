@@ -7,10 +7,10 @@ nav {
     height: var( --navHeight);
     width: 100vw;
 
-    background-color: #222676;
+    background-color: var(--policeBlue);
     color: white;
-    font-family: 'CustomFont';
-    font-size: 25px;
+    font-family: var( --mainFont);
+    font-size: var(--fontBig);
 
 
     & .PoliceIcon {
@@ -18,11 +18,13 @@ nav {
     }
     
     & .nav--flex {
+        align-self: start;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        padding: 0 1rem;
+        padding: .5rem 1rem;
         width: inherit;
     }
 
@@ -31,16 +33,15 @@ nav {
         cursor: pointer;
         
         padding: 0 1rem;
-        font-size: 18px;
+        font-size: var(--fontBig);
 
-        background: var( --mainBG);
+
+
+        background: rgb(203,204,218);
+        background: linear-gradient(0deg, rgba(203,204,218,1) 0%, rgba(255,255,255,1) 75%);
+
         color: black;
+        border: 1px solid var(--policeBlue);
     }
-
+    
 }
-
-/* nav>* {
-    font-family: 'CustomFont';
-    font-size: 25px;
-} */
-

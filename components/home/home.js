@@ -19,15 +19,23 @@ function render(DOM) {
 
 
     for (const button in structure.apps) {
-        const { name, route } = structure.apps[button];
+        const { name, route, img } = structure.apps[button];
 
         const buttonDOM = document.createElement('button');
-        buttonDOM.textContent = name;
+        buttonDOM.innerHTML = `
+            <img class="buttonImage--home" src="../../Images/${img}">
+            <p>${name}</p>
+        
+        `;
         DOM.append(buttonDOM);
 
 
         router(route, buttonDOM);
     }
+
+
+    const bottomContainer = document.createElement( 'footer');
+    bottomContainer.classList.add( 'uselessinformation');
 
 
 }

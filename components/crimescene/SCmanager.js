@@ -22,7 +22,7 @@ async function render(DOM) {
     if (!id) return terminal.preRender();
 
     switch( id ) {
-        case '1': return interrogations.preRender( id );
+        case '0': return interrogations.preRender( id );
         default: DOM.innerHTML = `Crimescene::${id} Does not exist?!?! What are you doing here officer??`;
     }
 

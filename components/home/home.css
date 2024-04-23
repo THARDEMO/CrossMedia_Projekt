@@ -3,13 +3,36 @@
     display: flex;
     flex-direction: column;
 
-}
 
-#homescreen>button {
-    border-top: 1px solid black;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    font-family: 'CustomFont';
-    height: 45px;
+    & button {
+        border: 1px solid var(--policeBlue);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 10px;        
+        
+        height: 60px;
+
+        font-family: var(--mainFont);
+        font-size: var(--fontReg);
+
+        background: rgb(203,204,218);
+        background: linear-gradient(0deg, rgba(203,204,218,1) 0%, rgba(255,255,255,1) 75%);
+
+        & img {
+            height: 100%;
+        }
+    }
+
+    & button:last-child {
+        border-bottom: 2px solid var(--policeBlue);
+    }
+
+
+    & button:hover,
+    button:active {
+        border-top: 3px solid black;
+        border-left: 2px solid black;
+        border-bottom: unset;
+    }
 }

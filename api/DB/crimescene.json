@@ -6,7 +6,7 @@
         "type": null 
     },
     {
-        "id": 1,
+        "id": 0,
         "name": "Interregation av misstänkt individ nr 2331",
         "key_code": "QWERTY",
         "type": "video",
@@ -31,13 +31,75 @@
         }
     },
     {
-        "id": 2,
-        "name": "Decode the message",
-        "key_code": "ABCDEF",
+        "id": 1,
+        "name": "Kryptiska Färger",
+        "key_code": "FKRX",
         "type": "pussle",
         "manuscript": "",
         "hints": null,
         "introduction": []
-
+    },
+    {
+        "id": 2,
+        "name": "Nyhetsmorgon i skåne",
+        "key_code": "Bo och Bosses bänk",
+        "type": "article",
+        "manuscript": "",
+        "hints": null,
+        "introduction": []
+    },
+    {
+        "id": 3,
+        "name": "Mff-supportern intervju",
+        "key_code": "SVEN-ÅKE NILSSON",
+        "type": "video",
+        "manuscript": "",
+        "hints": null,
+        "introduction": []
+    },
+    {
+        "id": 4,
+        "name": "__ ___ ._. . kod",
+        "key_code": "GK8529",
+        "type": "pussle",
+        "manuscript": "",
+        "hints": null,
+        "introduction": []
+    },
+    {
+        "id": 5,
+        "name": "Förbjudna Föremål",
+        "key_code": "Stora väskor",
+        "type": "video",
+        "manuscript": "",
+        "hints": null,
+        "introduction": []
+    },
+    {
+        "id": 6,
+        "name": "Bajspåsar & Skvallertanter",
+        "key_code": "TALLRIKEN",
+        "type": "video",
+        "manuscript": "",
+        "hints": null,
+        "introduction": []
+    },
+    {
+        "id": 7,
+        "name": "Ketchup & korvar",
+        "key_code": "TBA",
+        "type": "sound",
+        "manuscript": "",
+        "hints": null,
+        "introduction": []
+    },
+    {
+        "id": 8,
+        "name": "Margaretas Blomstergata",
+        "key_code": "Special Tiger Eye",
+        "type": "pussle",
+        "manuscript": "",
+        "hints": null,
+        "introduction": []
     }
 ]

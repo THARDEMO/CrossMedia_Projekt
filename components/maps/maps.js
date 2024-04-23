@@ -30,26 +30,12 @@ async function render( DOM ) {
 
     locations.forEach(location => addMarker(map, location, user_solved.includes( location.id)));
 
-    // const testMarker = L.marker([55.58486, 12.98913]).addTo( map);
-    // const testMarker2 = L.marker([55.59007, 12.99548]).addTo( map);
-
-    // testMarker.bindPopup( `
-    //     <div class="crimeMarker">
-    //         <h1>Title of Crimescene</h1>
-    //         <p> Description of crimescene here, can this be styled aswell maybe? lorem impsum dolores impartum consedium piccaloriom deslerio dolores</p>
-    //         <img src="https://www.cfmoller.com/imgintra/img-81503-w1052-h700-tD.jpg">
-    //         <p>Password hint: <em>Who plays here?</em></p>
-    //     </div>
-    //     <img class="markerImg" src="../../Images/Polisen.png">
-    // `);
-    // const popup = L.popup().set
-
     DOM.append( mapContainer);
 
 
     setTimeout(function () {
         window.dispatchEvent(new Event("resize"));
-     }, 100);
+    }, 100);
 
 }
 
