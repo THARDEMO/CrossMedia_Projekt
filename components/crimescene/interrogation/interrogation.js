@@ -24,8 +24,10 @@ async function render( DOM ) {
 
     loading( DOM );
 
-    const crimescene = await STATE.Get( {entity: 'crimescenes',id: id});
+    const crimescene = await STATE.Get( {entity: 'crimescenes', id: id});
     
+    console.log( crimescene);
+
     DOM.innerHTML = `
         <h1>${crimescene.name}</h1>
         <p>type of crimescene: ${crimescene.type}</p>

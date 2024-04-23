@@ -6,4 +6,38 @@
         width: 100%;
     }
 
+
+    & .leaflet-popup-content-wrapper {
+        border-radius: 0;
+        background: var( --mainBG);
+        /* opacity: .9; */
+    }
+
+
+    & .crimeMarker {
+        position: relative;
+        z-index: 1;
+
+        font-family: 'CustomFont';
+
+        & img {
+
+            width: 100%;
+            /* margin: 0 auto; */
+
+        }
+
+    }
+    
+    & .markerImg {
+        position: absolute;
+        z-index: 0;
+
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+
+        height: 75%;
+        opacity: .2;
+    }
 }

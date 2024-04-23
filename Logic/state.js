@@ -104,8 +104,14 @@ export async function Get( data ) {
 }
 
 function cloneArrayOfObjects( arrayOfObjects ) {
+    return JSON.parse( JSON.stringify( arrayOfObjects))
+    
+    if( typeof arrayOfObjects === 'object') return {...arrayOfObjects};
     if( arrayOfObjects.length <= 1) return {...arrayOfObjects[0]}
-    return [...arrayOfObjects.map( obj => { return {...obj}})]
+    return [...arrayOfObjects.map( obj => { 
+        if( obj.length ) return cloneArrayOfObjects( obj);
+        return {...obj }
+    })]
 }
 
 export const currentUserID = () => JSON.parse(checkPassage());

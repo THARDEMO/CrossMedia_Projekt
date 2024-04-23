@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "name": "Kryptiska Färger",
+        "description": "Ta dig till till den markerade platsen och lös det kryptiska meddelandet som har lämnats i färger. Plats Södra läktaren gamla stadion...",
+        "image": "crimescene_1_map.png",
+        "hints": "kod i ASCII = 70 75 82 88",
+        "location": {
+            "X": 55.58487,
+            "Y": 12.98918
+        }
+    },
+    {
+        "id": 2,
+        "name": "Nyhetsmorgon i skåne",
+        "description": "Skånes Dagblad har publiserat en tidskrift från den mindre kända skribenten Vivica. Kopplingen till vandalismen och innehållet av tidskriften går ej att neka. Undersök artikeln och se om det kan finnas några ledtrådar till vem som är gärningsmannen.",
+        "image": null,
+        "hints": "Där B:na vilar benen och läser tidningen.",
+        "location": {
+            "X": 55.58507, 
+            "Y": 12.98837
+        }
+    },
+    {
+        "id": 3,
+        "name": "Mff-supportern intervju",
+        "description": "Du möter upp en MFF-supporter som är villig till att ge en intervju för att hjälpa till med fallet. Han uppger att han har information och har sagt att ni ska mötas vid Idrottens Walk of Fame.",
+        "image": null,
+        "hints": "Känd Cyklist",
+        "location": {
+            "X": 55.58480,
+            "Y": 12.98848 
+        }
+    },
+    {
+        "id": 4,
+        "name": "__ ___ ._. . kod",
+        "description": "Du får punktering på poliskårens specialbyggda stadscykel och stannar vid den allmänna pumpen under din färd mellan brottsplatserna. Du börjar fylla upp men upptäcker snabbt att pumpen agerar konstigt. Det låter som om någon har programmerat in mors kod i pumptrycket. Avkoda meddelandet som pumpen förmedlar.",
+        "image": null,
+        "hints": "6 siffrig kod",
+        "location": {
+            "X": 55.587648, 
+            "Y": 12.988685 
+        }
+    },
+    {
+        "id": 5,
+        "name": "Förbjudna Föremål",
+        "description": "Polisen har fått tillgång till stadions övervakningskameror, där skådas en mystisk figur som släpar på någonting under kvällen som vandalismen skedde. Du har fått i uppgift att undersöka videon och komma fram till slutsatser.",
+        "image": "crimescene_5_map.png",
+        "hints": "Vad representerar bilden?",
+        "location": {
+            "X": 55.586773,  
+            "Y": 12.987508 
+        }
+    },
+    {
+        "id": 6,
+        "name": "Bajspåsar och skvallertanter",
+        "description": "I parken möter du en äldre dam som presenterar sig själv som Agneta. Agneta är ute och rastar sin hund och är välkänd som områdets skvallertant. Du frågar henne i hopp om att hon har sett något av intresse.",
+        "image": "crimescene_6_map.jpeg",
+        "hints": "Pildammarnas sfär",
+        "location": {
+            "X": 55.590134,   
+            "Y": 12.988795 
+        }
+    },
+    {
+        "id": 7,
+        "name": "ketchup och korvar",
+        "description": "TBA",
+        "image": null,
+        "hints": "TBA",
+        "location": {
+            "X": 55.579802,   
+            "Y": 12.995841
+        }
+    },
+    {
+        "id": 8,
+        "name": "Margaretas Blomstergata",
+        "description": "Le tresor le idfk det är viktigt för maj",
+        "image": "crimescene_6_map.jpeg",
+        "hints": "VIOLA TWIX: --:--",
+        "location": {
+            "X": 55.588847,   
+            "Y": 12.992965 
+        }
+    }
+]

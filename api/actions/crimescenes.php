@@ -9,7 +9,7 @@
         foreach( $all_crimescenes as $crimescene) 
         {
             if( $crimescene["id"] != $id) continue;
-            send_JSON( [$crimescene]);
+            send_JSON( $crimescene);
         }
 
         send_JSON( ["message" => "CrimeScene with id: $id does not exist"], 404);

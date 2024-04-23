@@ -4,9 +4,9 @@
     {
         $path = "./DB/messages_available.json";
 
-        $solvedCrimes = get_solved_crimes( $id);
+        $solved_crimes = get_solved_crimes( $id);
     
-        $messages = find_relations( $solvedCrimes, $path, 'message');
+        $messages = find_relations( $solved_crimes, $path, 'message');
 
         send_JSON( $messages);
     }
