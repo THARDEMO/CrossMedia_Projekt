@@ -40,4 +40,5 @@
 
     // GLOBALS
     $ignore_files = [".DS_Store", ".", ".."];
+    $required_to_be_true = true;
 ?>

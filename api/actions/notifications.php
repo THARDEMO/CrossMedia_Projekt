@@ -8,23 +8,29 @@
         exit();
     }
 
-
     if( $request_method === 'GET')
     {
         if( !$id) send_JSON( ["message" => "Param id is required"], 400);
         validate_user( $id);
 
-        $path = "./DB/notes_available.json";
+        $nr_notis = [];
+        foreach( ['note', 'message'] as $entity)
+        {
+            $path = "./DB/{$entity}_notis.json";
+            $notifications = get_file_data( $path);
 
-        $solvedCrimes = get_solved_crimes( $id);
+            $count = 0;
+            foreach( $notifications as $notis)
+            {
+                if( $notis["user_id"] !== $id) continue;
+                $count = $count + 1;
+            }
 
-        $notes = find_relations( $solvedCrimes, $path, 'note');
-        remove_notis( $id, 'note');
+            $nr_notis[$entity] = $count;
+        }
 
-
-        send_JSON( $notes);
+        send_JSON( $nr_notis);
     }
-
 
     send_JSON( ["message" => "Method $request_method isn't served at $entity"], 400);
 ?>

@@ -54,6 +54,19 @@ function save_file_data ($file_path, $data)
     return true;
 }
 
+function validate_user( $user_id)
+{
+    $all_users = get_file_data( "./DB/users.json");
+
+    foreach( $all_users as $user) 
+    {
+        if( $user['id'] != $user_id) continue;
+        return $user_id;
+    }
+
+    send_JSON( ["message" => "Access denied User: $user_id"], 403);
+}
+
 function get_solved_crimes( $user_id) 
 {
 
@@ -70,7 +83,67 @@ function get_solved_crimes( $user_id)
     return $user_solved_crimes;
 }
 
-function find_relations($user_relations, $path, $comparitor)
+function add_solved_crime( $user_id, $crime_id) 
+{
+    $solved_crimes = get_file_data( "./DB/solved_crimes.json");
+
+    foreach( $solved_crimes as $solved )
+    {
+        if( $solved['crime_id'] == $crime_id && $solved['user_id'] == $user_id)
+        {
+            send_JSON( ["message" => "Crime: $crime_id is already solved by User: $user_id"]);
+        }
+
+    }
+
+    $new_solved = [
+        "crime_id" => $crime_id,
+        "user_id" => $user_id,
+    ];
+
+    $solved_crimes[] = $new_solved;
+    
+    if( !save_file_data( "./DB/solved_crimes.json", $solved_crimes))
+    {
+        send_JSON( ["message" => "Internal server error"], 500);
+    }
+
+    add_notis( $user_id, $crime_id);
+
+    return $crime_id;
+
+}
+
+function add_notis( $user_id, $crime_id) 
+{
+    foreach( ['note', 'message'] as $entity)
+    {
+        $path = "./DB/{$entity}_notis.json";
+
+        $notifications = get_file_data( $path);
+        $new_notis = [
+            "crime_id" => $crime_id,
+            "user_id" => $user_id,
+        ];
+        $notifications[] = $new_notis;
+        save_file_data( $path, $notifications);
+    }
+}
+
+function remove_notis( $user_id, $entity) 
+{
+    $path = "./DB/{$entity}_notis.json";
+    $notifications = get_file_data( $path);
+
+    foreach( $notifications as $i => $notis)
+    {
+        if( $notis['user_id'] != $user_id) continue;
+        array_splice($notifications, $i);
+    }
+    save_file_data( $path, $notifications);
+}
+
+function find_relations($user_relations, $path, $entity)
 {
     $all_relations = get_file_data( $path);
 
@@ -79,10 +152,10 @@ function find_relations($user_relations, $path, $comparitor)
     {
         if( !in_array($relation['crime_id'], $user_relations)) continue;
 
-        $user_available_relations[] = $relation[$comparitor . "_id"];
+        $user_available_relations[] = $relation[$entity . "_id"];
     }
 
-    $all_resource = get_file_data( "./DB/$comparitor.json");
+    $all_resource = get_file_data( "./DB/$entity.json");
 
     $user_all_resources = [];
     foreach( $all_resource as $possible_resource) 
@@ -90,7 +163,6 @@ function find_relations($user_relations, $path, $comparitor)
         if( !in_array($possible_resource['id'], $user_available_relations)) continue;
         $user_all_resources[] = $possible_resource;
     }
-
 
     return $user_all_resources;
 }

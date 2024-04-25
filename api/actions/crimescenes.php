@@ -1,4 +1,12 @@
 <?php
+    if( !isset( $required_to_be_true))
+    {
+        header( "Content-Type: application/json");
+        http_response_code( 403);
+        $json = json_encode(["message" => "Not allowed to access endpoint directly"]);
+        echo $json;
+        exit();
+    }
 
     $path = "./DB/crimescene.json";
 
@@ -33,6 +41,10 @@
 
         if( isset( $request_data['crimescene_answer']))
         {
+            if( !isset( $request_data['crimescene_id']))
+            {
+                send_JSON( ["message" => "Missing key 'crimescene_id'"], 400);
+            }
 
             $answer = $request_data['crimescene_answer'];
             $crimescene_id = $request_data['crimescene_id'];
@@ -46,22 +58,12 @@
 
                 if( $crimescene['answer'] != $answer )
                 {
-                    send_JSON( ["message" => "Wrong Answer: $answer"]);
+                    send_JSON( ["message" => "Wrong Answer: $answer"], 400);
                 }
 
-                $solved_crimes = get_file_data( "./DB/solved_crimes.json");
-                $new_solved = [
-                    "crime_id" => $crimescene_id,
-                    "user_id" => $user_id,
-                ];
-                $solved_crimes[] = $new_solved;
-                
-                if( !save_file_data( $solved_crimes))
-                {
-                    send_JSON( ["message" => "Internal server error"], 500);
-                }
+                $id_of_solved = add_solved_crime( $user_id, $crimescene_id);
 
-                send_JSON( $crimescene_id);
+                send_JSON( $id_of_solved);
             }
 
             send_JSON( ["message" => "Crimescene: $crimescene_id does not exist"], 404);
