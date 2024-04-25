@@ -8,7 +8,7 @@
 
     if( !isset( $request_data[ 'entity']) || !isset( $request_data['user_id'])) 
     {
-        send_JSON( ['message' => 'Missing Keys'], 400);   
+        send_JSON( ['message' => 'Missing Obligatory Keys'], 400);   
     }
 
     $entity = $request_data[ 'entity'];
