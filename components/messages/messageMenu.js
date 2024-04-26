@@ -9,6 +9,6 @@ export function displayMenu(Messages, parentDOM) {
         displayedMessage.innerHTML = `<p>${message.name}</p> <p>${message.conversation[0].ToUser[0]}...</p>`
         parentDOM.append(displayedMessage)
 
-        router('messageDisplay', displayedMessage)
+        router('messageDisplay', displayedMessage, `message_id=${message.name}`);
     });
 }

@@ -5,7 +5,7 @@ export function router( page, DOM, params = null) {
 
     DOM.onclick = () => {
         let path = `${origin}?view=${page}`;
-        if( params) path += `?${params}`;
+        if( params) path += `&${params}`;
 
         location.href = path;
     }

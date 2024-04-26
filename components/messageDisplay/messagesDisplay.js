@@ -16,6 +16,11 @@ async function render(DOM) {
 
     NavComp()
 
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('message_id');
+
+    console.log( id);
     const messages = await STATE.Get({ entity: 'messages', id: STATE.currentUserID() });
 
     let Messages = [{
