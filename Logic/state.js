@@ -116,15 +116,3 @@ function cloneArrayOfObjects( arrayOfObjects ) {
 
 export const currentUserID = () => JSON.parse(checkPassage());
 export const checkPassage = () => STATE.loginKey();
-
-
-// (async function(){
-    
-//    let response = await Get( {
-//         entity: 'test',
-//         refresh: true,
-//     })
-
-//     console.log(response);
-
-// })()

@@ -8,7 +8,7 @@
 
     if( !isset( $_GET[ 'entity'])) 
     {
-        send_JSON( ['message' => 'Missing Params'], 400);
+        send_JSON( ['message' => 'Missing Obligatory Param'], 400);
     }
 
     $entity = $_GET[ 'entity'];

@@ -3,6 +3,7 @@ import { structure } from './structure.js';
 import { router } from '../../identities/router.js';
 import { NavComp } from '../../identities/nav/nav.js';
 
+import * as STATE from '../../Logic/state.js';
 
 
 export const component = {
@@ -13,9 +14,12 @@ export const component = {
     render
 }
 
-function render(DOM) {
-
+async function render(DOM) {
     NavComp(DOM);
+
+
+    const notis = await STATE.Get({entity: 'notifications', id: STATE.currentUserID()});
+    console.log( notis);
 
 
     for (const button in structure.apps) {

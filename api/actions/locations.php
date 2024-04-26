@@ -1,4 +1,13 @@
 <?php
+    if( !isset( $required_to_be_true))
+    {
+        header( "Content-Type: application/json");
+        http_response_code( 403);
+        $json = json_encode(["message" => "Not allowed to access endpoint directly"]);
+        echo $json;
+        exit();
+    }
+    
 
     $path = "./DB/crimescene_locations.json";
 
