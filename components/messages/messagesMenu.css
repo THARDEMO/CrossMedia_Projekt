@@ -1,0 +1,21 @@
+.displayedMessages {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10vw;
+
+    height: 60px;
+    width: 100vw;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+
+    font-family: var(--mainFont);
+    font-size: var(--fontReg);
+
+    background: rgb(203, 204, 218);
+    background: linear-gradient(0deg, rgba(191, 185, 172, 1) 0%, rgba(237, 233, 214, 1) 75%);
+}
+
+.displayedMessages>p {
+    margin-left: 10px;
+}

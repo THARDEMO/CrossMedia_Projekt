@@ -1,7 +1,9 @@
 
 export function textBuilder(MessageString, parentDOM) {
-
+    console.log(MessageString);
     MessageString.forEach(message => {
+        console.log(message);
+
 
         let message_time_container = document.createElement("div")
         let TimestampDiv = document.createElement("div")
@@ -38,7 +40,7 @@ export function textBuilder(MessageString, parentDOM) {
         TimestampDiv.innerHTML = `<p>${Time}</p>`
         message_time_container.classList.add("message_time_Container")
         messageContainer.classList.add("messageContainer")
-        TimestampDiv.classList.add("time")
+        TimestampDiv.classList.add("messagesTime")
     });
 
 }
