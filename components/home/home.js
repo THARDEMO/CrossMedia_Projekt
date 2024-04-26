@@ -23,13 +23,20 @@ async function render(DOM) {
 
 
     for (const button in structure.apps) {
-        const { name, route, img } = structure.apps[button];
+        const { name, route, _class, img } = structure.apps[button];
+
+        let notisContainer = ''
+        if( _class && notis[_class]) {
+            notisContainer = `<div class="notification">${notis[_class]} notification</div>`;
+        }
 
         const buttonDOM = document.createElement('button');
         buttonDOM.innerHTML = `
-            <img class="buttonImage--home" src="../../Images/${img}">
-            <p>${name}</p>
-        
+            <div>
+                <img class="buttonImage--home" src="../../Images/${img}">
+                <p>${name}</p>    
+            </div>
+            ${notisContainer}
         `;
         DOM.append(buttonDOM);
 
