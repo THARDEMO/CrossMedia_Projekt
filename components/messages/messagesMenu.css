@@ -1,3 +1,11 @@
+#Messages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
 .displayedMessages {
     display: flex;
     justify-content: start;

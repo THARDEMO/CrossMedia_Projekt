@@ -16,33 +16,60 @@ async function render(DOM) {
 
     NavComp()
 
-    
     const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('message_id');
+    const name = urlParams.get('message_name');
 
-    console.log( id);
+    console.log(name);
     const messages = await STATE.Get({ entity: 'messages', id: STATE.currentUserID() });
 
+
     let Messages = [{
-        ToUser: ["hello where are u?",
-            "how are u?",
-            "Awnser!"],
-        FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
-        timestamp: 1713769273,
+        name: "chefen",
+        conversation: [{
+            ToUser: ["Its chefen where where are u?",
+                "how are u?",
+                "Awnser!"],
+            FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
+            timestamp: 1713769273,
+        },
+        {
+            ToUser: ["hello where are u?"],
+            FromUser: ["im at home was just gonna take a nap!"],
+            timestamp: 1713769273,
+        },
+        {
+            ToUser: ["hello where are u?"],
+            FromUser: ["im at home was just gonna take a nap!"],
+            timestamp: 1713769273,
+        }]
+
     },
     {
-        ToUser: ["hello where are u?"],
-        FromUser: ["im at home was just gonna take a nap!"],
-        timestamp: 1713769273,
+        name: "Vittne",
+        conversation: [{
+            ToUser: ["Its Vittne where are u?",
+                "how are u?",
+                "Awnser!"],
+            FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
+            timestamp: 1713769273,
+        }]
     },
     {
-        ToUser: ["hello where are u?"],
-        FromUser: ["im at home was just gonna take a nap!"],
-        timestamp: 1713769273,
+        name: "Korvgubben",
+        conversation: [{
+            ToUser: ["Its Korvgubben where are u?",
+                "how are u?",
+                "Awnser!"],
+            FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
+            timestamp: 1713769273,
+        }]
     }]
 
-    textBuilder(Messages, DOM)
-
+    Messages.forEach(message => {
+        if (name === message.name) {
+            textBuilder(message, DOM)
+        }
+    });
 
 
 }

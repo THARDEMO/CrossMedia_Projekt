@@ -1,8 +1,13 @@
 
 export function textBuilder(MessageString, parentDOM) {
+
     console.log(MessageString);
-    MessageString.forEach(message => {
-        console.log(message);
+    let nameDiv = document.createElement("div")
+    nameDiv.classList.add("nameOfMessenger");
+    nameDiv.innerHTML = `<p>${MessageString.name}</p>`
+    parentDOM.append(nameDiv)
+
+    MessageString.conversation.forEach(message => {
 
 
         let message_time_container = document.createElement("div")

@@ -20,7 +20,7 @@ async function render(DOM) {
     let Messages = [{
         name: "chefen",
         conversation: [{
-            ToUser: ["hello where are u?",
+            ToUser: ["Its chefen where where are u?",
                 "how are u?",
                 "Awnser!"],
             FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
@@ -41,7 +41,17 @@ async function render(DOM) {
     {
         name: "Vittne",
         conversation: [{
-            ToUser: ["hello where are u?",
+            ToUser: ["Its Vittne where are u?",
+                "how are u?",
+                "Awnser!"],
+            FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
+            timestamp: 1713769273,
+        }]
+    },
+    {
+        name: "Korvgubben",
+        conversation: [{
+            ToUser: ["Its Korvgubben where are u?",
                 "how are u?",
                 "Awnser!"],
             FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
