@@ -8,11 +8,13 @@ export const structure = {
         notes: {
             name: 'Anteckningar',
             route: 'notes',
+            _class: 'note',
             img: 'notes.png',
         },
         messages: {
             name: 'Meddelanden',
             route: 'messages',
+            _class: 'message',
             img: 'messages.png',
         },
         crimescene: {
