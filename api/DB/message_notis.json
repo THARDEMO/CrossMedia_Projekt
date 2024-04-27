@@ -4,6 +4,14 @@
         "user_id": null
     },
     {
+        "crime_id": 1,
+        "user_id": "01234789"
+    },
+    {
+        "crime_id": 2,
+        "user_id": "01234789"
+    },
+    {
         "crime_id": 2,
         "user_id": "01234789"
     }

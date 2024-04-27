@@ -20,7 +20,7 @@ export function textBuilder(NotesString, Timestamp, parentDOM) {
     });
 
 
-    const date = new Date(Timestamp)
+    const date = new Date(Timestamp * 1000)
     const hours = date.getHours().toString().padEnd(0, '0')
     const minutes = date.getMinutes().toString().padStart(2, '0')
     const Time = (`${hours}:${minutes}`);

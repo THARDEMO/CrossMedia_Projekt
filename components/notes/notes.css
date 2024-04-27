@@ -1,4 +1,68 @@
-.notes {
+#Notes {
+    height: 100%;
+    overflow-y: scroll;
+
+
+    & .notesContainer {
+        padding: 0 1rem;
+
+        font-family: var( --mainFont);
+
+        & article:first-child {
+            margin-top: .5rem;
+        }
+
+        & article {
+            background: rgba(255, 255, 255, 0.254);
+            margin-bottom: 2rem;
+            border-bottom: 2px dotted rgba(0, 0, 0, 0.648);
+
+            
+            & h3 {
+                font-weight: normal;
+                font-size: var(--fontReg);
+            }
+        
+            & h4 {
+                font-weight: normal;
+                color: rgba(0, 0, 0, 0.648);
+
+            }
+
+            & p {
+                font-size: var(--fontSmall);
+                margin: .5rem 0;
+            }
+        }
+    }
+
+    & footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        background-color: var( --policeBlue);
+        font-family: var(--mainFont);
+        color: rgba(255, 255, 255, 0.699);
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        & div {
+            font-size: 3.5vw;
+            padding: .5rem;
+            text-align: center;
+        }
+
+        & div:not(div:last-child) {
+            border-right: 1.5px dotted white;
+        }
+    }
+}
+
+
+/* .notes {
     width: 90%;
     height: auto;
     background-color: gray;
@@ -10,9 +74,9 @@
     flex-direction: column;
 
 
-}
+} */
 
-.time {
+/* .time {
     width: 15%;
     height: 15px;
     background-color: gray;
@@ -46,4 +110,4 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
-}
+} */
