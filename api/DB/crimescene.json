@@ -29,11 +29,18 @@
         "id": 1,
         "name": "Kryptiska Färger",
         "key_code": "FKRX",
-        "answer": "correct",
+        "answer": "ROSENGÅRD",
         "type": "pussle",
         "manuscript": "",
         "hints": null,
-        "introduction": []
+        "introduction": {
+            "Initilizing": [ "Datalogg: Malmö Polisarkivet."],
+            "fetching": [ "Hämtar relevant data från brottsregistret:", " <span class='highlighted-terminal terminal-connected'>100%</span>"],
+            "brief": [ "Brottsplats: Kryptiska Färger"],
+            "brott": [ "Infomation kring brott,", "Någon har lämnat ett cipher vid zlatanstatyn..."],
+            "starting": [ "Lös pusslet och skriv in svaret när redo . . ."]
+        },
+        "pussleIMG": "crimescene_1_BA.png"
     },
     {
         "id": 2,

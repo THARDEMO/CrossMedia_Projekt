@@ -1,8 +1,7 @@
 import * as cManager from '../cManager.js'
-import { NavComp } from '../../identities/nav/nav.js';
 import * as STATE from '../../Logic/state.js';
+import { NavComp } from '../../identities/nav/nav.js';
 import { timestampSorter } from '../../Logic/timestampSorter.js';
-import { textBuilder } from './noteBuilder.js';
 
 export const component = {
     domID: 'Notes',
@@ -26,21 +25,26 @@ async function render(DOM) {
     </footer>  
     `;
 
+    const NoteDOM = DOM.querySelector( '.notesContainer');
+
+    const notifications = await STATE.Get({entity: 'notifications', id: STATE.currentUserID()});
     const notes = await STATE.Get({
         entity: 'notes',
         id: STATE.currentUserID(),
     });
 
-    if( !notes) {
-        return DOM.querySelector( '.notesContainer').innerHTML = `
-            <article>
-                <p>Jag borde lösa någon brottsplats först innan jag kan skriva några dataloggar här...</p>
-            </article>
-        `;
+    console.log( notifications['note']);
+
+    if( !notes.length) {
+        return renderNoteEntry(NoteDOM, {
+            heading: 'Vad ska jag göra nu?',
+            timestamp: (Date.now() / 1000),
+            notes: ['Bossen gav mig i uppgift imorse att gå och undersöka alla brottsplatser som är markerade på kartan, det är väl dags att sätta igång så att vi kanske kan fånga den skyldige. Hmm om jag lyckas kanske jag kan få den löneökningen som vi diskuterade förra veckan.']
+        })
     }
 
     const NOTES = timestampSorter( notes);
-    NOTES.forEach( note => renderNoteEntry( DOM.querySelector( '.notesContainer'), note));
+    NOTES.forEach( note => renderNoteEntry( NoteDOM, note));
 }
 
 function renderNoteEntry( DOM, note ) {

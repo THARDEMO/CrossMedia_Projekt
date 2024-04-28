@@ -19,14 +19,13 @@
             $path = "./DB/{$entity}_notis.json";
             $notifications = get_file_data( $path);
 
-            $count = 0;
+            $nr_notis[$entity] = [];
+
             foreach( $notifications as $notis)
             {
                 if( $notis["user_id"] !== $id) continue;
-                $count = $count + 1;
+                $nr_notis[$entity][] = $notis;
             }
-
-            $nr_notis[$entity] = $count;
         }
 
         send_JSON( $nr_notis);

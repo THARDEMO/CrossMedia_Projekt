@@ -5,13 +5,8 @@
         "timestamp": 124345544
     },
     {
-        "crime_id": 1,
-        "user_id": "01234789",
-        "timestamp": 1714217975
-    },
-    {
         "crime_id": 2,
         "user_id": "01234789",
-        "timestamp": 1714217935
+        "timestamp": 1714317950
     }
 ]

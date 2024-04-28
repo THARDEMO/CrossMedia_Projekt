@@ -19,7 +19,7 @@
     background: var(--terminalBg);
     color: var(--terminalTxt);
 
-    & video {
+    & video, picture, img {
         width: 100%;
     }
 
