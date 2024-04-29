@@ -54,34 +54,34 @@
         & li:last-child::before {
             content: '_ '
         }
+    }
 
-        & form {
-            display: flex;
-            justify-content: space-between;
-            
-            & input {
-                width: 100%;
-                font-family: 'customFont';
-                padding: unset;
-                margin: 3px 0;
-                letter-spacing: 2px;
-                font-size: 20px;
+    & form {
+        display: flex;
+        justify-content: space-between;
+        
+        & input {
+            width: 100%;
+            font-family: 'customFont';
+            padding: unset;
+            margin: 3px 0;
+            letter-spacing: 2px;
+            font-size: 20px;
 
 
-                border: unset;
-                color: var(--terminalTxt);
-            }
+            border: unset;
+            color: var(--terminalTxt);
+        }
 
-            & input:focus {
-                background: var(--terminalHl);
-            }
+        & input:focus {
+            background: var(--terminalHl);
+        }
 
-            & button {
-                font-size: 20px;
-                color: var(--terminalTxt);
-                font-family: 'customFont';
-                background: none;
-            }
+        & button {
+            font-size: 20px;
+            color: var(--terminalTxt);
+            font-family: 'customFont';
+            background: none;
         }
     }
       

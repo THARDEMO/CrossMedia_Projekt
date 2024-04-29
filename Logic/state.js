@@ -53,7 +53,7 @@ export async function update( data ) {
     });
 }
 
-export async function Post( component, data ) {
+export async function Post( data ) {
     
     const rqst = new Request( `${path}POST.php`, {
         method: 'POST',
