@@ -3,7 +3,7 @@ import * as STATE from '../../../Logic/state.js';
 import { PubSub } from '../../../Logic/PubSub.js';
 import { loading } from '../../../identities/loading.js';
 import { writeTerminalMessages } from '../../../identities/terminalMessages.js';
-
+import { solvedCrimescene } from '../solvedCS.js';
 
 export const puzzle = {
     domID: 'Puzzle',
@@ -33,13 +33,8 @@ async function render( DOM ) {
         <h1>${crimescene.name}</h1>
         <p>type of crimescene: ${crimescene.type}</p>
         <ul id="terminalContainer"></ul>
-        <div class="InterrogationContainer"></div>
-    `;
-
-    writeTerminalMessages( DOM.querySelector( '#terminalContainer'), crimescene.introduction,  () => {
-
-        const puzzleContainer = document.createElement('div');
-        puzzleContainer.innerHTML = `
+        
+        <div class="PuzzleContainer hiddenElement">
             <picture>
                 <img src="../../api/media/images/${crimescene.pussleIMG}">
             </picture>
@@ -48,16 +43,22 @@ async function render( DOM ) {
                 <button>Validera</button>
             </form>
             <p class="errorMessage"></p>
-        `;
+        </div>
+    `;
 
-        const form = puzzleContainer.querySelector( 'form');
+    writeTerminalMessages( DOM.querySelector( '#terminalContainer'), crimescene.introduction,  () => {
+
+        DOM.querySelector( '.hiddenElement').classList.remove( 'hiddenElement');
+
+        const form = DOM.querySelector( 'form');
+        const input = form.querySelector( 'input');
+
+        input.oninput = () => input.value = input.value.toUpperCase();
+
         form.onsubmit = async(e) => {
             e.preventDefault()
             
-            const input = form.querySelector( 'input');
-
             if( !input.value ) return
-
             if( input.value != crimescene.answer) return displayInputError( input.value, 'Fel svar' );
 
             const response = await STATE.Post({
@@ -73,8 +74,6 @@ async function render( DOM ) {
 
 
         }
-        DOM.append( puzzleContainer);
-
     });
 }
 
@@ -85,14 +84,3 @@ function displayInputError( inputContent, type ) {
     }, 200)
 }
 
-function solvedCrimescene( crimescene, DOM ) {
-    DOM.innerHTML = `
-    
-        <h1>${crimescene.name}</h1>
-        <p>STATUS: löst</p> 
-        <p>SVAR: ${crimescene.answer}</p>
-        <p>Nya Meddelanden och Anteckningar finns.</p>
-        <button>Återgå till Meny</button>
-    
-    `
-}

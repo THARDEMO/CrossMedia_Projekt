@@ -20,6 +20,7 @@
     color: var(--terminalTxt);
 
     & video, picture, img {
+        margin: 1.5rem 0;
         width: 100%;
     }
 
@@ -59,7 +60,7 @@
     & form {
         display: flex;
         justify-content: space-between;
-        
+
         & input {
             width: 100%;
             font-family: 'customFont';
@@ -82,6 +83,35 @@
             color: var(--terminalTxt);
             font-family: 'customFont';
             background: none;
+        }
+    }
+
+    & .hiddenElement {
+        display: none;
+    }
+
+    & .actionsContainer {
+
+        display: flex;
+        justify-content: space-evenly;
+
+        & button {
+            height: 50px;
+            width: 50px;
+
+            /* background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat; */
+    
+        }
+        & .restartCM {
+            /* background-image: url( '../../Images/terminalRestart.png') !important; */
+            background: rgb(233, 155, 10);
+        }
+
+        & .exitCM {
+            background: rgb(157, 13, 13);
+            /* background-image: url( '../../Images/terminalOff.png') !important; */
         }
     }
       

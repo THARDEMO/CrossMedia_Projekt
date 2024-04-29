@@ -2,7 +2,8 @@ import { checkPassage } from "./state.js";
 import { PubSub } from "./PubSub.js";
 
 export function viewManager() {
-    const origin = `${window.location.origin}/app/testing/`;
+    // const origin = `${window.location.origin}/app/testing/`;
+    const origin = `${window.location.origin}`;
     const location = window.location;
 
     const queryParams = new URLSearchParams(window.location.search);
