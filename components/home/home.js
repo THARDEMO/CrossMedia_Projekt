@@ -33,7 +33,7 @@ async function render(DOM) {
         const buttonDOM = document.createElement('button');
         buttonDOM.innerHTML = `
             <div>
-                <img class="buttonImage--home" src="../../Images/${img}">
+                <img class="buttonImage--home" src="./Images/${img}">
                 <p>${name}</p>    
             </div>
             ${notisContainer}

@@ -1,6 +1,6 @@
 export function router( page, DOM, params = null) {
 
-    const origin = window.location.origin;
+    const origin = `${window.location.origin}/app/testing/`;
     const location = window.location;
 
     DOM.onclick = () => {

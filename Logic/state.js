@@ -1,7 +1,7 @@
 import { fetcher } from './fetcher.js';
 import { PubSub } from './PubSub.js';
 
-const path = '../api/';
+const path = './api/';
 
 let STATE = {
     loginKey: () => localStorage.getItem( 'keyOfPassage'),

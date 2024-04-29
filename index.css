@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'CustomFont';
-    src: url('../../RetroFont/VT323-Regular.ttf');
+    src: url('./RetroFont/VT323-Regular.ttf');
 }
 
 
@@ -35,7 +35,7 @@
 #wrapper {
     background-color: var( --mainBG);
     margin-top: var(--navHeight);
-    height: calc(100svh - var( --navHeight));
+    height: calc(100vh - var( --navHeight));
     width: 100svw;
     /* padding: 15px; */
 }

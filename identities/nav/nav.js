@@ -14,7 +14,7 @@ export function NavComp() {
 
     nav.innerHTML = `
         <div class="nav--flex">
-            <img class="PoliceIcon" src ="../Images/Polisen.png"></img> 
+            <img class="PoliceIcon" src ="./Images/Polisen.png"></img> 
             <div>${Time}</div>
         </div>
     `;
