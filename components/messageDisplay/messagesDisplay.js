@@ -1,8 +1,9 @@
 import * as cManager from '../cManager.js'
 import * as STATE from '../../Logic/state.js';
 import { textBuilder } from "./messageBuilder.js";
-
 import { NavComp } from '../../identities/nav/nav.js';
+
+
 
 export const component = {
     domID: 'messageDisplay',
@@ -30,22 +31,22 @@ async function render(DOM) {
                 "how are u?",
                 "Awnser!"],
             FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
-            timestamp: 1713769273,
+            timestamp: 1713763000,
         },
         {
             ToUser: ["hello where are u?"],
             FromUser: ["im at home was just gonna take a nap!"],
-            timestamp: 1713769273,
+            timestamp: 1713761000,
         },
         {
             ToUser: ["hello where are u?"],
             FromUser: ["im at home was just gonna take a nap!"],
-            timestamp: 1713769273,
+            timestamp: 1713762000,
         },
         {
             ToUser: ["hello where are u?"],
             FromUser: ["im at home was just gonna take a nap!"],
-            timestamp: 1713769273,
+            timestamp: 1713760000,
         }]
 
     },
@@ -70,8 +71,11 @@ async function render(DOM) {
         }]
     }]
 
+
+
     Messages.forEach(message => {
         if (name === message.name) {
+            message.conversation.sort((a, b) => a.timestamp - b.timestamp);
             textBuilder(message, DOM)
         }
     });
