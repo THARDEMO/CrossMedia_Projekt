@@ -41,6 +41,11 @@ async function render(DOM) {
             ToUser: ["hello where are u?"],
             FromUser: ["im at home was just gonna take a nap!"],
             timestamp: 1713769273,
+        },
+        {
+            ToUser: ["hello where are u?"],
+            FromUser: ["im at home was just gonna take a nap!"],
+            timestamp: 1713769273,
         }]
 
     },
