@@ -26,14 +26,14 @@ async function render(DOM) {
         const { name, route, _class, img } = structure.apps[button];
 
         let notisContainer = ''
-        if( _class && notis[_class]) {
-            notisContainer = `<div class="notification">${notis[_class]} notification</div>`;
+        if( _class && notis[_class].length) {
+            notisContainer = `<div class="notification">${notis[_class].length} notification</div>`;
         }
 
         const buttonDOM = document.createElement('button');
         buttonDOM.innerHTML = `
             <div>
-                <img class="buttonImage--home" src="../../Images/${img}">
+                <img class="buttonImage--home" src="./Images/${img}">
                 <p>${name}</p>    
             </div>
             ${notisContainer}

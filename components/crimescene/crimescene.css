@@ -19,7 +19,8 @@
     background: var(--terminalBg);
     color: var(--terminalTxt);
 
-    & video {
+    & video, picture, img {
+        margin: 1.5rem 0;
         width: 100%;
     }
 
@@ -54,34 +55,63 @@
         & li:last-child::before {
             content: '_ '
         }
+    }
 
-        & form {
-            display: flex;
-            justify-content: space-between;
-            
-            & input {
-                width: 100%;
-                font-family: 'customFont';
-                padding: unset;
-                margin: 3px 0;
-                letter-spacing: 2px;
-                font-size: 20px;
+    & form {
+        display: flex;
+        justify-content: space-between;
+
+        & input {
+            width: 100%;
+            font-family: 'customFont';
+            padding: unset;
+            margin: 3px 0;
+            letter-spacing: 2px;
+            font-size: 20px;
 
 
-                border: unset;
-                color: var(--terminalTxt);
-            }
+            border: unset;
+            color: var(--terminalTxt);
+        }
 
-            & input:focus {
-                background: var(--terminalHl);
-            }
+        & input:focus {
+            background: var(--terminalHl);
+        }
 
-            & button {
-                font-size: 20px;
-                color: var(--terminalTxt);
-                font-family: 'customFont';
-                background: none;
-            }
+        & button {
+            font-size: 20px;
+            color: var(--terminalTxt);
+            font-family: 'customFont';
+            background: none;
+        }
+    }
+
+    & .hiddenElement {
+        display: none;
+    }
+
+    & .actionsContainer {
+
+        display: flex;
+        justify-content: space-evenly;
+
+        & button {
+            height: 50px;
+            width: 50px;
+
+            /* background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat; */
+    
+        }
+        & .restartCM {
+            /* background-image: url( '../../Images/terminalRestart.png') !important; */
+            background: rgb(233, 155, 10);
+        }
+
+        & .exitCM {
+            background: rgb(157, 13, 13);
+            /* background-image: url( '../../Images/terminalOff.png') !important; */
         }
     }
       

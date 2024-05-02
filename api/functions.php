@@ -77,7 +77,7 @@ function get_solved_crimes( $user_id)
     foreach( $solved_crimes as $crime )
     {
         if( $crime['user_id'] != $user_id) continue;
-        $user_solved_crimes[] = $crime['crime_id'];
+        $user_solved_crimes[] = $crime;
     }
 
     return $user_solved_crimes;
@@ -99,6 +99,7 @@ function add_solved_crime( $user_id, $crime_id)
     $new_solved = [
         "crime_id" => $crime_id,
         "user_id" => $user_id,
+        "timestamp" => $_SERVER['REQUEST_TIME']
     ];
 
     $solved_crimes[] = $new_solved;
@@ -143,16 +144,22 @@ function remove_notis( $user_id, $entity)
     save_file_data( $path, $notifications);
 }
 
-function find_relations($user_relations, $path, $entity)
+function find_relations($solved_crimes, $path, $entity)
 {
     $all_relations = get_file_data( $path);
 
     $user_available_relations = [];
     foreach( $all_relations as $relation) 
     {
-        if( !in_array($relation['crime_id'], $user_relations)) continue;
+        foreach( $solved_crimes as $solved_crime)
+        {
+            if( $relation['crime_id'] != $solved_crime['crime_id']) continue;
+            $user_available_relations[] = [
+                "relation_id" => $relation[$entity . "_id"],
+                "timestamp" => $solved_crime['timestamp'],
+            ];
+        }
 
-        $user_available_relations[] = $relation[$entity . "_id"];
     }
 
     $all_resource = get_file_data( "./DB/$entity.json");
@@ -160,10 +167,16 @@ function find_relations($user_relations, $path, $entity)
     $user_all_resources = [];
     foreach( $all_resource as $possible_resource) 
     {
-        if( !in_array($possible_resource['id'], $user_available_relations)) continue;
-        $user_all_resources[] = $possible_resource;
+        foreach( $user_available_relations as $user_relation)
+        {
+            if( $possible_resource['id'] != $user_relation['relation_id']) continue;
+
+            $possible_resource['timestamp'] = $user_relation['timestamp'];
+            $user_all_resources[] = $possible_resource;
+        }
     }
 
     return $user_all_resources;
 }
+
 ?>

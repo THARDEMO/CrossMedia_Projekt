@@ -1,7 +1,7 @@
 import { fetcher } from './fetcher.js';
 import { PubSub } from './PubSub.js';
 
-const path = '../api/';
+const path = './api/';
 
 let STATE = {
     loginKey: () => localStorage.getItem( 'keyOfPassage'),
@@ -53,7 +53,7 @@ export async function update( data ) {
     });
 }
 
-export async function Post( component, data ) {
+export async function Post( data ) {
     
     const rqst = new Request( `${path}POST.php`, {
         method: 'POST',

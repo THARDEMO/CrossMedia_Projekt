@@ -41,7 +41,7 @@ function terminalLogin( DOM ) {
         `;
 
         /// POST TO SERVER
-        const resource = await STATE.Post( 'terminal', {
+        const resource = await STATE.Post({
             entity: 'crimescenes',
             key_code: code,
             user_id: STATE.currentUserID()

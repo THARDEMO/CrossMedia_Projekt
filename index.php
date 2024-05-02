@@ -44,6 +44,7 @@
 
         <script type="module">
             import { viewManager } from './Logic/viewManager.js';
+            import { PubSub } from './Logic/PubSub.js';
             viewManager();
 
             let COMPONENTS = [];

@@ -3,7 +3,9 @@ import * as STATE from '../../Logic/state.js';
 
 import { NavComp } from '../../identities/nav/nav.js';
 import { terminal } from './terminal/terminal.js';
+
 import { interrogations } from './interrogation/interrogation.js';
+import { puzzle } from './puzzles/puzzle.js';
 
 export const component = {
     domID: 'CrimeScenes',
@@ -23,6 +25,9 @@ async function render(DOM) {
 
     switch( id ) {
         case '0': return interrogations.preRender( id );
+        case '1': return puzzle.preRender( id );
+
+
         default: DOM.innerHTML = `Crimescene::${id} Does not exist?!?! What are you doing here officer??`;
     }
 

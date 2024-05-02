@@ -49,11 +49,11 @@ function addMarker( map, location, completed) {
         <div class="crimeMarker">
             <h1>${location.name}</h1>
             <p>${location.description}</p>
-            <img class="locationImage" src="../../api/media/images/${location.image}">
+            <img class="locationImage" src="./api/media/images/${location.image}">
             <p>Lösenords Ledtråd: <em>${location.hints}</em></p>
             <p>Klarad: ${completed}</p>
         </div>
-        <img class="markerImg" src="../../Images/Polisen.png">
+        <img class="markerImg" src="./Images/Polisen.png">
     `;
 
 
