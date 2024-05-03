@@ -24,6 +24,8 @@
     background: linear-gradient(0deg, rgba(191, 185, 172, 1) 0%, rgba(237, 233, 214, 1) 75%);
 }
 
-.displayedMessages>p {
+
+#messenger {
+    width: 15vw;
     margin-left: 10px;
 }

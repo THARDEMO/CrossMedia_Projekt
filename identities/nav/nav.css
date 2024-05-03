@@ -2,21 +2,22 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 
     display: grid;
-    height: var( --navHeight);
+    height: var(--navHeight);
     width: 100vw;
 
     background-color: var(--policeBlue);
     color: white;
-    font-family: var( --mainFont);
+    font-family: var(--mainFont);
     font-size: var(--fontBig);
 
 
     & .PoliceIcon {
         height: 40px;
     }
-    
+
     & .nav--flex {
         align-self: start;
 
@@ -31,17 +32,17 @@ nav {
     & #HomePageBtn {
         align-self: end;
         cursor: pointer;
-        
+
         padding: 0 1rem;
         font-size: var(--fontBig);
 
 
 
-        background: rgb(203,204,218);
-        background: linear-gradient(0deg, rgba(203,204,218,1) 0%, rgba(255,255,255,1) 75%);
+        background: rgb(203, 204, 218);
+        background: linear-gradient(0deg, rgba(203, 204, 218, 1) 0%, rgba(255, 255, 255, 1) 75%);
 
         color: black;
         border: 1px solid var(--policeBlue);
     }
-    
+
 }
