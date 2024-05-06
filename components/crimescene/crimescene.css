@@ -91,26 +91,28 @@
     }
 
     & .actionsContainer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
 
-        display: flex;
-        gap: 1.5rem;
-        /* justify-content: space-evenly; */
+        padding: 1.5rem;
 
         & button {
-            height: 50px;
-            width: 50px;
+            height: 55px;
+            width: 55px;
             border-radius: 15px;
             cursor: pointer;
 
             background-position: center;
-            background-size: cover;
+            background-size: 75%;
             background-repeat: no-repeat;
-    
+
+            margin-right: 1.5rem;    
         }
         & .restartCM {
-            /* background-image: url( '../../Images/terminalRestart.png') !important; */
-            background-image: url("data:image/svg+xml,%3Csvg width='57' height='57' viewBox='0 0 57 57' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M41.3427 24.4732C38.3719 18.3195 31.7231 15.2073 25.3573 16.339L27.0549 13.1561C27.4792 12.4488 27.1963 11.5293 26.489 11.1756C25.7817 10.7512 24.8622 11.0341 24.5085 11.7414L21.0427 18.178C21.0427 18.178 20.2646 19.4512 21.467 20.0171L27.9036 23.4829C28.1158 23.6244 28.3988 23.6951 28.6109 23.6951C29.1061 23.6951 29.6719 23.4122 29.8841 22.9171C30.3085 22.2097 30.0256 21.2902 29.3183 20.9366L25.9939 19.0975C31.0158 18.2488 36.25 20.7951 38.5841 25.6049C41.4134 31.4756 38.9378 38.5488 33.067 41.3073C30.2378 42.6512 27.0549 42.8634 24.0841 41.8024C21.1134 40.7414 18.7085 38.6195 17.3646 35.7902C16.0207 32.961 15.8085 29.778 16.8695 26.8073C17.1524 26.0293 19.4158 20.8305 18.6378 20.5475C17.9305 20.4061 14.3939 25.1805 14.1109 25.9585C12.8378 29.7073 13.05 33.6683 14.7475 37.2049C16.4451 40.7414 19.4158 43.4293 23.1646 44.7732C24.7914 45.339 26.4183 45.6219 28.0451 45.6219C30.2378 45.6219 32.4305 45.1268 34.4109 44.1366C41.767 40.6 44.8792 31.7585 41.3427 24.4732Z' fill='white'/%3E%3C/svg%3E%0A");
-
+            background-image: url("data:image/svg+xml,%3Csvg width='54' height='54' viewBox='0 0 54 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.5 16.9214L14 16.9214L14 42L40.5 42L40.5 16.9214L25.5 16.9214M25.5 16.9214L31 11.4214M25.5 16.9214L31 22.4214' stroke='white' stroke-width='3'/%3E%3C/svg%3E%0A");
+            
             background-color: rgb(233, 155, 10);
             border: 2px solid rgb(142, 98, 15);
             border-top: 2px solid rgb(236, 188, 99);
@@ -118,13 +120,14 @@
         }
 
         & .exitCM {
-
+            
+            background-image: url("data:image/svg+xml,%3Csvg width='54' height='54' viewBox='0 0 54 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.5845 16.9214L14 16.9214L14 42L40.5 42L40.5 16.9214L32.2887 16.9214' stroke='white' stroke-width='3'/%3E%3Cpath d='M27 11L27 25' stroke='white' stroke-width='3'/%3E%3C/svg%3E%0A");
             background-color: rgb(157, 13, 13);
             border: 2px solid rgb(101, 7, 7);
             border-top: 2px solid  rgb(226, 54, 54);
             border-left: 2px solid rgb(226, 54, 54);
-            /* background-image: url( '../../Images/terminalOff.png') !important; */
         }
+
     }
       
 }

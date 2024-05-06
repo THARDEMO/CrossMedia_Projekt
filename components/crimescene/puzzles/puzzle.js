@@ -42,7 +42,7 @@ async function render( DOM ) {
                 <input placeholder="Svar"></input>
                 <button>Validera</button>
             </form>
-            <p class="errorMessage"></p>
+            <p class="inputMessage"></p>
         </div>
     `;
 
@@ -59,7 +59,9 @@ async function render( DOM ) {
             e.preventDefault()
             
             if( !input.value ) return
-            if( input.value != crimescene.answer) return displayInputError( input.value, 'Fel svar' );
+            if( input.value != crimescene.answer) return displayInputMessage( input.value, 'Fel vid validation: Fel svar', 'Error');
+            
+            displayInputMessage( input.value, 'Sänder svar till server:', 'Loading');
 
             const response = await STATE.Post({
                 entity: 'crimescenes',
@@ -68,19 +70,17 @@ async function render( DOM ) {
                 crimescene_answer: input.value,
             })
 
-            if( !response) return
+            if( !response) return displayInputMessage( 'Försök igen', 'Någonting gick snett...', 'Connected');
 
             solvedCrimescene( crimescene, DOM);
-
-
         }
     });
 }
 
-function displayInputError( inputContent, type ) {
-    const errorMessage = document.querySelector( '.errorMessage');
+function displayInputMessage( inputContent, message, klass ) {
+    const inputMessage = document.querySelector( '.inputMessage');
     setTimeout(()=>{
-        errorMessage.textContent = `Fel vid validation: ${type} - ${inputContent}`;
+        inputMessage.innerHTML = `${message} - <span class="highlighted-terminal" style="color:var(--terminal${klass})">${inputContent}</span>`;
     }, 200)
 }
 

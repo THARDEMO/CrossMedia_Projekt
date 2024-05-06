@@ -22,7 +22,8 @@ export function solvedCrimescene( crimescene, DOM ) {
         status: ['STATUS:', '<span class="highlighted-terminal terminal-success">Löst.</span>'],
         svar: [ 'SVAR:', `<span class="highlighted-terminal terminal-loading">${crimescene.answer}</span>`],
         update: [ 'UPPDATERAR: . . .'],
-        message: [ 'Nya Meddelanden och Anteckningar tillgängliga.'],
+        message: [ 'Nya <span class="highlighted-terminal terminal-connected">Meddelanden</span> & <span class="highlighted-terminal terminal-connected">Anteckningar</span> tillgängliga.'],
+        continue: [ 'Fortsätt undersöka brottsplatser och få mer information om vandalismen.']
     };
 
     writeTerminalMessages( DOM.querySelector( '#terminalContainer'), terminalSuccess, () => {
