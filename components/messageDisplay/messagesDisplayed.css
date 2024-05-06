@@ -1,12 +1,10 @@
 #messageDisplay {
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+
     padding-bottom: 20px;
     background-color: lightgray;
 
@@ -17,7 +15,7 @@
 
     max-width: 50vw;
     width: 50vw;
-    height: auto;
+    /* height: auto; */
     background-color: #a5a5a5;
     padding: 10px;
 
@@ -35,7 +33,7 @@
 .messageFromUser {
     max-width: 50vw;
     width: 50vw;
-    height: auto;
+    /* height: auto; */
     background-color: #003bea;
     color: white;
     padding: 10px;
@@ -84,8 +82,14 @@
 }
 
 .nameOfMessenger {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+
+    width: fit-content;
     font-family: var(--mainFont);
     font-size: 25px;
     border-bottom: 1px solid black;
+    margin: 0 auto;
     margin-top: 30px;
 }

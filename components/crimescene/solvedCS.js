@@ -6,11 +6,17 @@ export function solvedCrimescene( crimescene, DOM ) {
     DOM.innerHTML = `
         <h1>${crimescene.name}</h1>
         <ul id="terminalContainer"></ul> 
-        <div class="actionsContainer hiddenElement">
-            <button class="exitCM"></button>
-            <button class="restartCM"></button>
+        <div class="actionsContainer">
+            <button class="exitCM hiddenElement"></button>
+            <button class="restartCM hiddenElement"></button>
         </div>   
     `;
+
+    //QUIT BUTTON
+    router( 'home', DOM.querySelector( '.exitCM'));
+    // RESTART BUTTON
+    router( 'crimescene', DOM.querySelector( '.restartCM'));
+
 
     const terminalSuccess = {
         status: ['STATUS:', '<span class="highlighted-terminal terminal-success">Löst.</span>'],
@@ -20,11 +26,7 @@ export function solvedCrimescene( crimescene, DOM ) {
     };
 
     writeTerminalMessages( DOM.querySelector( '#terminalContainer'), terminalSuccess, () => {
-
-        DOM.querySelector( '.hiddenElement').classList.remove( 'hiddenElement');
-        
-
-        
+        DOM.querySelectorAll( '.hiddenElement').forEach(C => C.classList.remove( 'hiddenElement'));
     })
 
 }
