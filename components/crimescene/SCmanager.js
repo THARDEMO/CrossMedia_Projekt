@@ -24,7 +24,7 @@ async function render(DOM) {
     if (!id) return terminal.preRender();
 
     switch( id ) {
-        case '0': return interrogations.preRender( id );
+        case '9999': return interrogations.preRender( id );
         case '1': return puzzle.preRender( id );
 
 
