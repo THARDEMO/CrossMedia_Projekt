@@ -56,7 +56,7 @@ function InterrogationPhase( { phase, DOM, crimescene }) {
     
     DOM.innerHTML += `
         <video controls autoplay>
-            <source src="../../api/media/videos/${interrogation.video}">
+            <source src="./api/media/videos/${interrogation.video}">
         </video>
         <div class="ResponseContainer"></div>
     `

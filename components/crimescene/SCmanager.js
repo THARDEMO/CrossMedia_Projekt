@@ -21,6 +21,8 @@ async function render(DOM) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
 
+    console.log( 'test', id);
+
     if (!id) return terminal.preRender();
 
     switch( id ) {

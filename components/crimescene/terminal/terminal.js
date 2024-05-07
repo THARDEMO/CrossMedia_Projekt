@@ -49,6 +49,8 @@ function terminalLogin( DOM ) {
 
         if( !resource) return writeTerminalMessages( DOM, structure.terminalError, terminalLogin, DOM);
 
+
+        ///FIX THIS correct path on launch
         writeTerminalMessages( DOM, structure.terminalSuccess, () => {
             window.location = window.location.origin + `/?view=crimescene&id=${resource.crime_id}`;
         })

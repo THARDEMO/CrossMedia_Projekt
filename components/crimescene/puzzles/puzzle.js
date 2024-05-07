@@ -36,7 +36,7 @@ async function render( DOM ) {
         
         <div class="PuzzleContainer hiddenElement">
             <picture>
-                <img src="../../api/media/images/${crimescene.pussleIMG}">
+                <img src="./api/media/images/${crimescene.pussleIMG}">
             </picture>
             <form> 
                 <input placeholder="Svar"></input>

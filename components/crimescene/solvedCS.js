@@ -1,4 +1,4 @@
-import { router } from '../../../identities/router.js';
+import { router } from '../../identities/router.js';
 import { writeTerminalMessages } from '../../identities/terminalMessages.js';
 
 

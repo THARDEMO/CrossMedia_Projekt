@@ -92,7 +92,6 @@
 
             Promise.all( COMPONENTS.map( component => import( component )))
             .then( components => components.forEach( module => {
-
                     if( !module.component) return
 
                     module.component.preRender();
