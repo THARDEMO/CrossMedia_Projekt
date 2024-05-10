@@ -1,9 +1,10 @@
 import * as cManager from '../cManager.js';
+import * as STATE from '../../Logic/state.js';
+import { PubSub } from '../../Logic/PubSub.js';
 import { structure } from './structure.js';
 import { router } from '../../identities/router.js';
 import { NavComp } from '../../identities/nav/nav.js';
-
-import * as STATE from '../../Logic/state.js';
+import { loading } from '../../identities/loading.js';
 
 
 export const component = {
@@ -17,10 +18,15 @@ export const component = {
 async function render(DOM) {
     NavComp(DOM);
 
+    DOM.innerHTML = loading( DOM);
 
     const notis = await STATE.Get({entity: 'notifications', id: STATE.currentUserID()});
-    console.log( notis);
 
+    PubSub.publish
+    ({
+       event: 'FETCH::removeLoading',
+       detail: null,
+    })
 
     for (const button in structure.apps) {
         const { name, route, _class, img } = structure.apps[button];

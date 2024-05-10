@@ -1,0 +1,32 @@
+#Interrogations {
+
+
+    & .ResponseContainer {
+        display: flex;
+        justify-content: space-between;
+
+        & button {
+            font-size: 20px;
+            color: var(--terminalTxt);
+            font-family: 'customFont';
+            background: none;
+            border-bottom: 1px solid var( --terminalTxt);
+        }
+    }
+
+    & .InterrogationsActionsContainer {
+        background: var( --policeBlue);
+        
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        padding: 1.5rem;
+
+        & button {
+            cursor: pointer;
+            margin-right: 1.5rem;    
+        }
+    }
+}

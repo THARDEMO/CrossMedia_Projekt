@@ -8,7 +8,7 @@ export const ACCOUNT = {
     logout,
 }
 
-const path = '../api/account/';
+const path = './api/account/';
 
 async function login({ username, password }) {
 
@@ -19,6 +19,8 @@ async function login({ username, password }) {
             password: password,
         })
     });
+
+    console.log( loginRqst);
     
     const response = await fetcher( loginRqst );
     

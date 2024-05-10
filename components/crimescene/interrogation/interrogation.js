@@ -3,6 +3,7 @@ import * as STATE from '../../../Logic/state.js';
 
 import { loading } from '../../../identities/loading.js';
 import { writeTerminalMessages } from '../../../identities/terminalMessages.js';
+import { solvedCrimescene } from '../solvedCS.js';
 
 
 export const interrogations = {
@@ -22,7 +23,7 @@ export const interrogations = {
 async function render( DOM ) {
     const id = interrogations.crimeId;
 
-    loading( DOM );
+    // loading( DOM );
 
     const crimescene = await STATE.Get( {entity: 'crimescenes', id: id});
     
@@ -44,28 +45,25 @@ async function render( DOM ) {
 }
 
 
-
-
 function InterrogationPhase( { phase, DOM, crimescene }) {
-    const phaseKey = Object.keys( crimescene.interrogation)[phase];
-    
-    DOM.innerHTML = 'null'
 
+    //NO MORE PHASES
+    if( phase >= Object.keys( crimescene.interrogation).length ) return endPhase( DOM, crimescene);
+
+    const phaseKey = Object.keys( crimescene.interrogation)[phase];
+    DOM.innerHTML = null;
     const interrogation = crimescene.interrogation[phaseKey];
     
     DOM.innerHTML += `
-        <video controls>
-            <source src="../../api/media/videos/${interrogation.video}">
+        <video controls autoplay>
+            <source src="./api/media/videos/${interrogation.video}">
         </video>
+        <div class="ResponseContainer"></div>
     `
 
     DOM.querySelector( 'video').onended = () => {
+        DOM.querySelector('.ResponseContainer').innerHTML = null;
 
-        if( phaseKey === 'last' ) {
-            DOM.innerHTML = `conclusion here...`;
-            return
-        }
-        
         interrogation.answers.forEach(answer => {
 
             const answerButton = document.createElement( 'button');
@@ -79,8 +77,36 @@ function InterrogationPhase( { phase, DOM, crimescene }) {
                 })
             }
 
-            DOM.append( answerButton);
+            DOM.querySelector('.ResponseContainer').append( answerButton);
         });
 
     };
+}
+
+async function endPhase( DOM, crimescene ) {
+
+
+    const response = await STATE.Post({
+        entity: 'crimescenes',
+        crimescene_id: crimescene.id, 
+        user_id: STATE.currentUserID(),
+        crimescene_answer: 'correct',
+    })
+
+    console.log( response);
+
+    const container = document.createElement( 'div');
+    container.classList.add( 'InterrogationsActionsContainer')
+    container.innerHTML = `
+        <button class="continue">Fortsätt</button>
+        <button class="restart">Starta Om</button>    
+    `;
+
+    container.querySelector( '.continue').onclick = () => {
+        solvedCrimescene( crimescene, document.querySelector( '#Interrogations'));
+    }
+
+    container.querySelector( '.restart').onclick = () => InterrogationPhase({phase:0,DOM:DOM,crimescene:crimescene});
+
+    DOM.append( container);
 }

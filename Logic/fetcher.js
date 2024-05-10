@@ -5,7 +5,6 @@ export async function fetcher( rqst ) {
    try {
       const response = await fetch( rqst );
       if( response.ok ) {
-
          return await response.json();
       }
 

@@ -1,7 +1,9 @@
 import * as cManager from '../cManager.js'
 import * as STATE from '../../Logic/state.js';
+import { PubSub } from '../../Logic/PubSub.js';
 import { NavComp } from '../../identities/nav/nav.js';
 import { timestampSorter } from '../../Logic/timestampSorter.js';
+import { loading } from '../../identities/loading.js';
 
 export const component = {
     domID: 'Notes',
@@ -14,7 +16,7 @@ export const component = {
 async function render(DOM) {
     NavComp()
     DOM.innerHTML = `
-
+    ${loading(DOM)}
     <div class="notesContainer"></div>
 
     <footer>
@@ -33,7 +35,11 @@ async function render(DOM) {
         id: STATE.currentUserID(),
     });
 
-    console.log( notifications['note']);
+    PubSub.publish
+    ({
+       event: 'FETCH::removeLoading',
+       detail: null,
+    })
 
     if( !notes.length) {
         return renderNoteEntry(NoteDOM, {

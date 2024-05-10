@@ -63,7 +63,7 @@ export async function Post( data ) {
 
     const response = await fetcher( rqst);
     
-    if(!response) return console.log( 'error')
+    if(!response) return false
 
     return response;
 }

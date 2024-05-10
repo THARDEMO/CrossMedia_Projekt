@@ -83,3 +83,20 @@ input:focus {
     color: var(--CtA);
 }
 
+.loadingMessage {
+    margin: .5rem 1.5rem;
+    color: var( --policeBlue);
+    font-family: var( --mainFont);
+}
+
+.loadingMessage::after {
+    content: 'test';
+    animation: loading 1s linear infinite alternate;
+}
+
+@keyframes loading {
+    0% { content: ''; }
+    50% { content: '.'; }
+    75% { content: '..'; }
+    100%{ content: '...'; }
+}

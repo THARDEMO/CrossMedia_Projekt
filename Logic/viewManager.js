@@ -2,7 +2,7 @@ import { checkPassage } from "./state.js";
 import { PubSub } from "./PubSub.js";
 
 export function viewManager() {
-    // const origin = `${window.location.origin}/app/testing/`;
+    // const origin = `${window.location.origin}/app/testing2/`;
     const origin = `${window.location.origin}`;
     const location = window.location;
 
