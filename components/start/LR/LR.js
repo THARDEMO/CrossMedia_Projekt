@@ -1,28 +1,34 @@
 import * as cManager from '../../cManager.js';
 import { ACCOUNT } from '../../../Logic/accountManager.js';
 import { PubSub } from '../../../Logic/PubSub.js';
+import { StartPageNav } from '../../../identities/nav/nav.js';
 
 
 export const LR = {
     domID: 'loginPage',
     elementType: 'section',
     page: null,
-    getDOM: () => document.getElementById( LR.domID),
+    getDOM: () => document.getElementById(LR.domID),
 
-    preRender: ( type ) => {
+    preRender: (type) => {
         LR.page = type;
         LR.getDOM()?.remove();
-        cManager.renderComponent( LR)
+        cManager.renderComponent(LR)
     },
     render
 }
 
-function render( DOM ) {
+function render(DOM) {
+    StartPageNav()
 
     DOM.innerHTML = `
-        <div class="flexContainer flex-justify-SB">
+    <button id="closeLR">X</button>
+        <div class="PoliceIconContainer">
+            <img class="PoliceIconLR" src ="./Images/Polisen.png"></img>
+        </div>
+        <div class="flexContainer flex-justify-center">
             <h3>${LR.page}</h3>  
-            <button id="closeLR">X</button>
+            
         </div>
         <form id="LR-form">
             ${returnInputHTML('text', 'Användare', 'username')}
@@ -33,63 +39,63 @@ function render( DOM ) {
             </div>
         </form>
     `;
-    submitButton( DOM.querySelector('#LR-form'));
-    
-    secondaryActionMessage( DOM );
-    DOM.querySelector( '#closeLR').onclick = () => DOM.remove();
+    submitButton(DOM.querySelector('#LR-form'));
+
+    secondaryActionMessage(DOM);
+    DOM.querySelector('#closeLR').onclick = () => DOM.remove();
 
 
-    const errorDOM = DOM.querySelector( '.error');
-    const successDOM = DOM.querySelector( '.success');
+    const errorDOM = DOM.querySelector('.error');
+    const successDOM = DOM.querySelector('.success');
     //ERRORS
     PubSub.subscribe
-    ({
-        event: 'LR::error',
-        listener: ( detail ) => displayMessage( errorDOM, detail),
-    })
+        ({
+            event: 'LR::error',
+            listener: (detail) => displayMessage(errorDOM, detail),
+        })
     PubSub.subscribe
-    ({
-        event: 'ERROR::ReachServer',
-        listener: ( { response, message }) => displayMessage( errorDOM, `${message}: ${response.status}, try again.`)
-    })
+        ({
+            event: 'ERROR::ReachServer',
+            listener: ({ response, message }) => displayMessage(errorDOM, `${message}: ${response.status}, try again.`)
+        })
     PubSub.subscribe
-    ({
-        event: 'ERROR::fetcher',
-        listener: (detail) => displayMessage( errorDOM, detail)
-    })
+        ({
+            event: 'ERROR::fetcher',
+            listener: (detail) => displayMessage(errorDOM, detail)
+        })
     //SUCCESS
     PubSub.subscribe
-    ({
-        event: 'LR::success',
-        listener: ( detail ) => displayMessage( successDOM, detail.message),
-    })
+        ({
+            event: 'LR::success',
+            listener: (detail) => displayMessage(successDOM, detail.message),
+        })
 
-    function displayMessage( container, message ) {
+    function displayMessage(container, message) {
         container.textContent = message;
-        setTimeout( () => container.textContent = null, 5000)
+        setTimeout(() => container.textContent = null, 5000)
     }
 }
 
-function secondaryActionMessage( parentDOM ) {
+function secondaryActionMessage(parentDOM) {
 
-    const DOM = document.createElement( 'div');
-    DOM.classList.add( 'secondaryAction');
+    const DOM = document.createElement('div');
+    DOM.classList.add('secondaryAction');
 
-    switch( LR.page) {
-        case 'Logga In': 
+    switch (LR.page) {
+        case 'Logga In':
             DOM.innerHTML = 'Aldrig spelat innan? Registrera dig <em class="emphezisedText">här</em> och börja spela!';
-            DOM.onclick = () => LR.preRender( 'Registrera Konto');
-        break;
+            DOM.onclick = () => LR.preRender('Registrera Konto');
+            break;
         case 'Registrera Konto':
             DOM.innerHTML = 'Är du redan en spelare? Logga in <em class="emphezisedText">här</em>.';
-            DOM.onclick = () => LR.preRender( 'Logga In');
-        break;
+            DOM.onclick = () => LR.preRender('Logga In');
+            break;
     }
 
-    parentDOM.append( DOM );
+    parentDOM.append(DOM);
 }
 
-function returnInputHTML( type, label, target, classList) {
+function returnInputHTML(type, label, target, classList) {
     return `
        <div class="inputContainer">
             <label for="input[${label}]">${label}</label>
@@ -98,64 +104,64 @@ function returnInputHTML( type, label, target, classList) {
     `;
 }
 
-function submitButton( formDOM ) {
+function submitButton(formDOM) {
 
-    const DOM = document.createElement( 'button');
+    const DOM = document.createElement('button');
     DOM.type = 'submit';
 
     const fieldOBJ = {};
 
-    switch( LR.page) {
-        case 'Logga In': 
+    switch (LR.page) {
+        case 'Logga In':
             DOM.textContent = 'Logga in';
             DOM.onclick = (e) => {
                 e.preventDefault();
-                if( !controlInputs()) return;
+                if (!controlInputs()) return;
 
-                document.querySelectorAll( "form input").forEach( field => fieldOBJ[field.dataset.target] = field.value)
-                ACCOUNT.login( fieldOBJ);
+                document.querySelectorAll("form input").forEach(field => fieldOBJ[field.dataset.target] = field.value)
+                ACCOUNT.login(fieldOBJ);
             }
-        break;
-        case 'Registrera Konto': 
+            break;
+        case 'Registrera Konto':
             DOM.textContent = 'Registrera';
             DOM.onclick = (e) => {
                 e.preventDefault();
-                if(!controlInputs()) return;
+                if (!controlInputs()) return;
 
-                document.querySelectorAll( "form input").forEach( field => fieldOBJ[field.dataset.target] = field.value)
+                document.querySelectorAll("form input").forEach(field => fieldOBJ[field.dataset.target] = field.value)
 
-                ACCOUNT.register( fieldOBJ);
+                ACCOUNT.register(fieldOBJ);
             }
-        break;
+            break;
     }
 
-    formDOM.append( DOM);
+    formDOM.append(DOM);
 
 }
 
 function controlInputs() {
-    const inputs = document.querySelectorAll( '.inputContainer > input');
+    const inputs = document.querySelectorAll('.inputContainer > input');
     var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-    
-    for( const input of inputs) {
+
+    for (const input of inputs) {
         const inputContent = input.value;
         // console.log( inputContent, input);
-        
-        if( inputContent.length < 3) {
+
+        if (inputContent.length < 3) {
             PubSub.publish
-            ({
-                event: 'LR::error',
-                detail: 'För få karaktärer, minst antal = 3',
-            })
+                ({
+                    event: 'LR::error',
+                    detail: 'För få karaktärer, minst antal = 3',
+                })
             return false;
         }
 
-        if( format.test( inputContent)) {
+        if (format.test(inputContent)) {
             PubSub.publish
-            ({
-                event: 'LR::error',
-                detail: 'Specialtecken är inte tillåtna',
-            })
+                ({
+                    event: 'LR::error',
+                    detail: 'Specialtecken är inte tillåtna',
+                })
             return false
         }
 

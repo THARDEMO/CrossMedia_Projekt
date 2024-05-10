@@ -19,11 +19,24 @@ export function NavComp() {
         </div>
     `;
 
-    if( pageParam !== 'home') {
+    if (pageParam !== 'home') {
         nav.innerHTML += '<p id="HomePageBtn">← meny</p>';
-        let HomePageBtn = nav.querySelector("#HomePageBtn")    
+        let HomePageBtn = nav.querySelector("#HomePageBtn")
         router('home', HomePageBtn)
     }
+
+    document.body.prepend(nav)
+}
+
+
+export function StartPageNav() {
+    const nav = document.createElement("nav")
+
+    nav.innerHTML = `
+    <div class="nav--flex">
+        <img class="PoliceIcon" src ="./Images/Polisen.png"></img> 
+    </div>
+`;
 
     document.body.prepend(nav)
 }
