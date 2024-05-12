@@ -1,0 +1,94 @@
+#Settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#seperator {
+    height: 250px;
+    width: 1px;
+    background-color: black;
+}
+
+#settingsContainer {
+    width: 90vw;
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+#LeftSideBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 35px;
+
+    font-family: var(--mainFont);
+    font-size: 18px;
+}
+
+#RightSideBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 35px;
+
+    font-family: var(--mainFont);
+    font-size: 18px;
+    margin-top: 160px;
+}
+
+#SettingsHeader {
+    margin-top: 30px;
+    font-family: var(--mainFont);
+    font-size: 25px;
+}
+
+
+#logout>button {
+    background-color: var(--mainBG);
+    font-family: var(--mainFont);
+    font-size: 18px;
+    padding: 0px;
+}
+
+.SettingsIcons {
+    height: 15px;
+}
+
+.SettingsDivs {
+    display: flex;
+    gap: 10px;
+}
+
+.chevron {
+    height: 13px;
+    width: 13px;
+}
+
+.SettingMenuContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    cursor: pointer;
+}
+
+.SettingMenuContainerLogout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+
+}
+
+#logout>button {
+    cursor: pointer;
+}
