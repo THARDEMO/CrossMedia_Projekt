@@ -37,6 +37,10 @@
     margin-top: var(--navHeight);
     height: calc(100vh - var( --navHeight));
     width: 100svw;
+
+    & section {
+        padding-bottom: calc(100vh - 100svh);
+    }
     /* padding: 15px; */
 }
 

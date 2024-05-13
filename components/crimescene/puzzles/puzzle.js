@@ -26,8 +26,6 @@ async function render( DOM ) {
 
     const crimescene = await STATE.Get( {entity: 'crimescenes', id: id});
 
-    
-    console.log( crimescene);
 
     DOM.innerHTML = `
         <h1>${crimescene.name}</h1>
@@ -45,6 +43,10 @@ async function render( DOM ) {
             <p class="inputMessage"></p>
         </div>
     `;
+
+    if( crimescene.mp3) {
+        console.log('audio!!!')
+    }
 
     writeTerminalMessages( DOM.querySelector( '#terminalContainer'), crimescene.introduction,  () => {
 

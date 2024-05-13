@@ -66,11 +66,20 @@
         "id": 4,
         "name": "__ ___ ._. . kod",
         "key_code": "GK8529",
-        "answer": "correct",
+        "answer": "MILAN",
         "type": "pussle",
         "manuscript": "",
         "hints": null,
-        "introduction": []
+        "introduction": {
+            "Initilizing": [ "Datalogg: Malmö Polisarkivet."],
+            "fetching": [ "Hämtar relevant data från brottsregistret:", " <span class='highlighted-terminal terminal-connected'>100%</span>"],
+            "brief": ["Brottsplats: __ ___ ._. -"],
+            "brott": [ "Infomation kring brott,", "Cykelpumpen gör konstiga ljud ifrån sig, det låter som morsekod."],
+            "starting": [ "Lyssna och avkoda ordet som meddelas"]
+        },
+        "mp3": "enpoint.mp3",
+        "pussleIMG": "crimescene_4_BA.png"
+
     },
     {
         "id": 5,

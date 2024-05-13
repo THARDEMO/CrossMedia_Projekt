@@ -21,14 +21,13 @@ async function render(DOM) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
 
-    console.log( 'test', id);
-
     if (!id) return terminal.preRender();
 
     switch( id ) {
         case '9999': return interrogations.preRender( id );
         case '1': return puzzle.preRender( id );
-
+        case '4': return puzzle.preRender( id );
+        // case '4': return puzzle.preRender( id );
 
         default: DOM.innerHTML = `Crimescene::${id} Does not exist?!?! What are you doing here officer??`;
     }

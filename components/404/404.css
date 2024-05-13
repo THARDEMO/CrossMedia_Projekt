@@ -1,0 +1,9 @@
+#page404 {
+    padding: 1.5rem;
+    font-family: var(--mainFont);
+
+    & span {
+        font-size: 32px;
+        color: var(--terminalError);
+    }
+}
