@@ -12,7 +12,13 @@
     {
         if( !$id) send_JSON( ["message" => "Param id is required"], 400);
         validate_user( $id);
+
+        if( !isset( $_GET['conversation_id']))
+        {
+            send_JSON( ['message' => 'Conversation id needs to be specified'], 400);
+        }
         
+        $conversation_id = $_GET['conversation_id'];
         $path = "./DB/messages_available.json";
 
         $solved_crimes = get_solved_crimes( $id);
@@ -20,7 +26,14 @@
         $messages = find_relations( $solved_crimes, $path, 'message');
         remove_notis( $id, 'message');
 
-        send_JSON( $messages);
+        $conversation_messages = [];
+        foreach( $messages as $message )
+        {
+            if( $message['conversation_id'] != $conversation_id) continue;
+            $conversation_messages[] = $message;
+        }
+
+        send_JSON( $conversation_messages);
     }
 
 

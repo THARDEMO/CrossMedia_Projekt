@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "chefen",
+        "conversation_id": 1,
         "conversation": [
             {
                 "ToUser": [
@@ -46,13 +46,12 @@
     },
     {
         "id": 2,
-        "name": "Vittne",
+        "conversation_id": 1,
         "conversation": [
             {
                 "ToUser": [
-                    "Its Vittne where are u?",
-                    "how are u?",
-                    "Awnser!"
+                    "Hej, bra jobbat på brottsplatsen, det var en smart lösning på det kluriga problemet",
+                    "Kämpa på poliskåren lägger stor vikt på dina axlar!"
                 ],
                 "FromUser": [
                     "im at home was just gonna take a nap!",
@@ -64,12 +63,12 @@
     },
     {
         "id": 3,
-        "name": "Korvgubben",
+        "conversation_id": 2,
         "conversation": [
             {
                 "ToUser": [
-                    "Its Korvgubben where are u?",
-                    "how are u?",
+                    "Det är Mammsen",
+                    "tänkte bara kolla läget med min älskade polis.",
                     "Awnser!"
                 ],
                 "FromUser": [
