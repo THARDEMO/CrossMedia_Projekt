@@ -1,4 +1,5 @@
 import * as cManager from '../cManager.js';
+import { NavComp } from '../../identities/nav/nav.js';
 
 export const component = {
     domID: 'page404',
@@ -10,5 +11,16 @@ export const component = {
 
 function render( selfDOM ) {
 
-    selfDOM.textContent = 'This page does not exist: 404';
+    NavComp( selfDOM );
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('view');
+
+
+    selfDOM.innerHTML = `
+
+        <h1><span>404</span> - ${page} existerar ej...</h1>
+        <p>Återgå till <em>MENY</em> för att fortsätta lösa alla tillgängliga brott, du kommer klara detta om du kämpar på! Malmös Poliskår lägger sitt fulla förtroende i dig. Hitta näsan!</p>
+    
+    `;
 }
