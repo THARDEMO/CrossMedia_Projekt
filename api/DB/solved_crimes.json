@@ -18,5 +18,10 @@
         "crime_id": 9999,
         "user_id": "01234789",
         "timestamp": 1715083531
+    },
+    {
+        "crime_id": "1",
+        "user_id": "01234578",
+        "timestamp": 1715583828
     }
 ]

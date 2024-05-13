@@ -16,6 +16,7 @@ export const component = {
 async function render(DOM) {
     NavComp();
 
+    const messages = await STATE.Get({ entity: 'messages', id: STATE.currentUserID() });
 
     let Messages = [{
         name: "chefen",
