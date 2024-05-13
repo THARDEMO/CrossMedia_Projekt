@@ -69,7 +69,7 @@ export async function Post( data ) {
 }
 
 export async function Get( data ) {
-    const { entity, id = null, refresh = false } = data
+    const { entity, id = null, params, refresh = false } = data
 
     if( STATE[entity] && !refresh) {
         //RETURNS EXISTING DATA ON CLIENT
@@ -83,6 +83,7 @@ export async function Get( data ) {
     //NO DATA ON CLIENT OR REFRESH CLIENT DATA
     let rqstString = `${path}GET.php?entity=${entity}`;
     if( id) rqstString += `&id=${id}`;
+    if( params) rqstString += `&${params}`;
 
     const rqst = new Request( rqstString);
     const response = await fetcher( rqst );

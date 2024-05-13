@@ -19,8 +19,5 @@
     }
 
 
-
-
-
     send_JSON( ["message" => "Method $request_method isn't served at $entity"], 400);
 ?>
