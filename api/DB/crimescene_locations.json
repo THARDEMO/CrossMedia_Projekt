@@ -17,19 +17,19 @@
         "image": null,
         "hints": "Där B:na vilar benen och läser tidningen.",
         "location": {
-            "X": 55.58507, 
-            "Y": 12.98837
+            "X": 55.5851579, 
+            "Y": 12.9884366
         }
     },
     {
         "id": 3,
-        "name": "Mff-supportern intervju",
+        "name": "Walk of fame",
         "description": "Du möter upp en MFF-supporter som är villig till att ge en intervju för att hjälpa till med fallet. Han uppger att han har information och har sagt att ni ska mötas vid Idrottens Walk of Fame.",
         "image": null,
         "hints": "Känd Cyklist",
         "location": {
-            "X": 55.58480,
-            "Y": 12.98848 
+            "X": 55.5847719,
+            "Y": 12.9886964 
         }
     },
     {
@@ -50,8 +50,8 @@
         "image": "crimescene_5_map.png",
         "hints": "Vad representerar bilden?",
         "location": {
-            "X": 55.586773,  
-            "Y": 12.987508 
+            "X": 55.5849210,  
+            "Y": 12.9891490 
         }
     },
     {
@@ -61,8 +61,8 @@
         "image": "crimescene_6_map.jpeg",
         "hints": "Pildammarnas sfär",
         "location": {
-            "X": 55.590134,   
-            "Y": 12.988795 
+            "X": 55.5894898,   
+            "Y": 12.9878592 
         }
     },
     {
@@ -83,8 +83,8 @@
         "image": "crimescene_6_map.jpeg",
         "hints": "VIOLA TWIX: --:--",
         "location": {
-            "X": 55.588847,   
-            "Y": 12.992965 
+            "X": 55.5888251,   
+            "Y": 12.9929544 
         }
     }
 ]
