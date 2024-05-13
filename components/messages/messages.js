@@ -16,52 +16,24 @@ export const component = {
 async function render(DOM) {
     NavComp();
 
-    const messages = await STATE.Get({ entity: 'messages', id: STATE.currentUserID() });
-
-    let Messages = [{
-        name: "chefen",
-        conversation: [{
-            ToUser: ["Its chefen where where are u?",
-                "how are u?",
-                "Awnser!"],
-            FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
-            timestamp: 1713769273,
-        },
+    const conversations = await STATE.Get(
         {
-            ToUser: ["hello where are u?"],
-            FromUser: ["im at home was just gonna take a nap!"],
-            timestamp: 1713769273,
-        },
+            entity: 'conversations',
+            id: STATE.currentUserID(),
+        });
+
+
+    const messages = await STATE.Get(
         {
-            ToUser: ["hello where are u?"],
-            FromUser: ["im at home was just gonna take a nap!"],
-            timestamp: 1713769273,
-        }]
+            entity: 'messages',
+            id: STATE.currentUserID(),
+            params: `conversation_id=1`
+        });
 
-    },
-    {
-        name: "Vittne",
-        conversation: [{
-            ToUser: ["Its Vittne where are u?",
-                "how are u?",
-                "Awnser!"],
-            FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
-            timestamp: 1713769273,
-        }]
-    },
-    {
-        name: "Korvgubben",
-        conversation: [{
-            ToUser: ["Its Korvgubben where are u?",
-                "how are u?",
-                "Awnser!"],
-            FromUser: ["im at home was just gonna take a nap!", "what do you want?"],
-            timestamp: 1713769273,
-        }]
-    }]
+    console.log(conversations);
 
 
-    displayMenu(Messages, DOM)
+    displayMenu(conversations, messages, DOM)
 
 
 }

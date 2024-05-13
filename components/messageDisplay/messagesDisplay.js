@@ -18,20 +18,28 @@ async function render(DOM) {
     NavComp()
 
     const urlParams = new URLSearchParams(window.location.search);
-    const name = urlParams.get('message_name');
+    const name = urlParams.get('name');
+    const messenger_id = urlParams.get(`message_id`)
+    console.log(messenger_id);
 
-    const messages = await STATE.Get({ entity: 'messages', id: STATE.currentUserID() });
-    console.log(messages);
-
-    if (messages !== undefined) {
-        messages.forEach(message => {
-            if (name === message.name) {
-                message.conversation.sort((a, b) => a.timestamp - b.timestamp);
-                textBuilder(message, DOM)
-            }
+    const messages = await STATE.Get(
+        {
+            entity: 'messages',
+            id: STATE.currentUserID(),
+            params: `conversation_id=${messenger_id}`
         });
-    } else {
-        DOM.innerHTML = `No messages yet!`
-    }
+
+    let nameDiv = document.createElement("div")
+    nameDiv.classList.add("nameOfMessenger");
+    nameDiv.innerHTML = `<p>${name}</p>`
+    DOM.append(nameDiv)
+
+
+    messages.forEach(message => {
+        console.log(messages);
+        message.conversation.sort((a, b) => a.timestamp - b.timestamp);
+        textBuilder(message, DOM)
+    });
+
 }
 

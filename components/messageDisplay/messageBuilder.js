@@ -1,24 +1,31 @@
-import { timestampSorter } from '../../Logic/timestampSorter.js';
 
 export function textBuilder(MessageString, parentDOM) {
 
 
     console.log(MessageString);
-    let nameDiv = document.createElement("div")
-    nameDiv.classList.add("nameOfMessenger");
-    nameDiv.innerHTML = `<p>${MessageString.name}</p>`
-    parentDOM.append(nameDiv)
+
+    let message_time_container = document.createElement("div")
+    let TimestampDiv = document.createElement("div")
+    let messageContainer = document.createElement("div")
+
+    parentDOM.append(message_time_container)
+    message_time_container.append(TimestampDiv)
+    message_time_container.append(messageContainer)
+
+    let Timestamp = MessageString.timestamp;
+    const date = new Date(Timestamp * 1000)
+    const hours = date.getHours().toString().padEnd(0, '0')
+    const minutes = date.getMinutes().toString().padStart(2, '0')
+    const Time = (`${hours}:${minutes}`);
+
+
+    TimestampDiv.innerHTML = `<p>${Time}</p>`
+    message_time_container.classList.add("message_time_Container")
+    messageContainer.classList.add("messageContainer")
+    TimestampDiv.classList.add("messagesTime")
 
     MessageString.conversation.forEach(message => {
 
-
-        let message_time_container = document.createElement("div")
-        let TimestampDiv = document.createElement("div")
-        let messageContainer = document.createElement("div")
-
-        parentDOM.append(message_time_container)
-        message_time_container.append(TimestampDiv)
-        message_time_container.append(messageContainer)
 
         message.ToUser.forEach(conversation => {
             let messageToUserDiv = document.createElement("div");
@@ -37,17 +44,7 @@ export function textBuilder(MessageString, parentDOM) {
         })
 
 
-        let Timestamp = message.timestamp;
-        const date = new Date(Timestamp * 1000)
-        const hours = date.getHours().toString().padEnd(0, '0')
-        const minutes = date.getMinutes().toString().padStart(2, '0')
-        const Time = (`${hours}:${minutes}`);
 
-
-        TimestampDiv.innerHTML = `<p>${Time}</p>`
-        message_time_container.classList.add("message_time_Container")
-        messageContainer.classList.add("messageContainer")
-        TimestampDiv.classList.add("messagesTime")
     });
 
 }
