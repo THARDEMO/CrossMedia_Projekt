@@ -26,6 +26,9 @@ async function render( DOM ) {
 
     const crimescene = await STATE.Get( {entity: 'crimescenes', id: id});
 
+    let audioElement = '';
+    if( crimescene.mp3) audioElement = `<audio controls src="./api/media/audio/${crimescene.mp3}"></audio>`
+
 
     DOM.innerHTML = `
         <h1>${crimescene.name}</h1>
@@ -36,6 +39,7 @@ async function render( DOM ) {
             <picture>
                 <img src="./api/media/images/${crimescene.pussleIMG}">
             </picture>
+            ${audioElement}
             <form> 
                 <input placeholder="Svar"></input>
                 <button>Validera</button>
@@ -43,10 +47,6 @@ async function render( DOM ) {
             <p class="inputMessage"></p>
         </div>
     `;
-
-    if( crimescene.mp3) {
-        console.log('audio!!!')
-    }
 
     writeTerminalMessages( DOM.querySelector( '#terminalContainer'), crimescene.introduction,  () => {
 

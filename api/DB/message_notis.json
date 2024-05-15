@@ -2,9 +2,5 @@
     {
         "crime_id": null,
         "user_id": null
-    },
-    {
-        "crime_id": 9999,
-        "user_id": "12345679"
     }
 ]

@@ -15,7 +15,7 @@ function render(DOM) {
 
 
     DOM.innerHTML += `
-
+    
     <header id="SettingsHeader">Settings</header>
     
     <div id="settingsContainer">
@@ -75,7 +75,7 @@ function render(DOM) {
                 <img class="chevron" src="./Images/chevron.png"></img>
             </div>
 
-            <div class="SettingMenuContainer">
+            <div class="SettingMenuContainer logoutContainer">
                 <div class="settingsDivs" id="logout">
                     <img class="SettingsIcons"  src ="./Images/logout.png"></img>
                     <button>Logga Ut</button>
@@ -86,8 +86,23 @@ function render(DOM) {
         </div>
     
     </div>
-    `
+
+    <div class="messageIfClick"><p></p></div>
+
+    `;
+
+    // const messageContainer = document.createElement( 'div');
+    // messageContainer.classList.add( 'messageIfClick')
+    // messageContainer.innerHTML = '<p></p>';
+
+    // document.querySelector( '#wrapper').append(messageContainer)
+
+    DOM.querySelectorAll( '.SettingMenuContainer:not(.logoutContainer)').forEach(c=>c.onclick = () => {
+
+        DOM.querySelector( '.messageIfClick > p').textContent = 'Dessa knappar är enbart Visuella, de har inga actions kopplade till sig...Förutom Logga ut då såklart, det kan du alltid göra.'
+
+    });
 
 
-    DOM.querySelector('button').onclick = () => ACCOUNT.logout();
+    DOM.querySelector('.logoutContainer').onclick = () => ACCOUNT.logout();
 }

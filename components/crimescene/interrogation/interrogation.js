@@ -34,6 +34,7 @@ async function render( DOM ) {
         <p>type of crimescene: ${crimescene.type}</p>
         <ul id="terminalContainer"></ul>
         <div class="InterrogationContainer"></div>
+        <div class="messageContainer"></div>
     `;
 
     writeTerminalMessages( DOM.querySelector( '#terminalContainer'), crimescene.introduction,  InterrogationPhase, {
@@ -61,20 +62,33 @@ function InterrogationPhase( { phase, DOM, crimescene }) {
         <div class="ResponseContainer"></div>
     `
 
+    // DOM.querySelector( '.video').innerHTML = `<source src="./api/media/videos/${interrogation.video}"></source>`;
+
     DOM.querySelector( 'video').onended = () => {
-        DOM.querySelector('.ResponseContainer').innerHTML = null;
+        if( interrogation.answers === null ) return endPhase( DOM, crimescene);
+
+        document.querySelector('.messageContainer').innerHTML = ''
 
         interrogation.answers.forEach(answer => {
 
             const answerButton = document.createElement( 'button');
-            answerButton.textContent = answer;
+            answerButton.textContent = answer.preview;
         
             answerButton.onclick = () => {
-                InterrogationPhase({
-                    phase: phase += 1,
-                    DOM: DOM,
-                    crimescene: crimescene,
-                })
+                
+                DOM.querySelector('.ResponseContainer').innerHTML = null;
+                document.querySelector('.messageContainer').innerHTML = `
+                    <p>${answer.message}<p>
+                `;
+
+                setTimeout(()=>{
+                    InterrogationPhase({
+                        phase: phase += 1,
+                        DOM: DOM,
+                        crimescene: crimescene,
+                    })
+
+                }, 500);
             }
 
             DOM.querySelector('.ResponseContainer').append( answerButton);

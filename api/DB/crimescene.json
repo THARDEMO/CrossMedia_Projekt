@@ -46,11 +46,18 @@
         "id": 2,
         "name": "Nyhetsmorgon i skåne",
         "key_code": "Bo och Bosses bänk",
-        "answer": "correct",
+        "answer": "inget möjligt svar...",
         "type": "article",
         "manuscript": "",
         "hints": null,
-        "introduction": []
+        "introduction": {
+            "Initilizing": [ "Datalogg: Malmö Polisarkivet."],
+            "fetching": [ "Hämtar relevant data från brottsregistret:", " <span class='highlighted-terminal terminal-connected'>100%</span>"],
+            "brief": [ "Brottsplats: Nyhetsmorgon i skåne"],
+            "brott": [ "Infomation kring brott,", "En misstänksam artikel har publiserats i Skåne Nyheter."],
+            "starting": [ "Läs artikeln och ta reda på om det är någonting relevant för vandalismen."]
+        },
+        "article_img": "crimescene_2_BA.png"
     },
     {
         "id": 3,
@@ -60,7 +67,120 @@
         "type": "video",
         "manuscript": "",
         "hints": null,
-        "introduction": []
+        "introduction": {
+            "Initilizing": [ "Datalogg: Malmö Polisarkivet."],
+            "fetching": [ "Hämtar relevant data från brottsregistret:", " <span class='highlighted-terminal terminal-connected'>100%</span>"],
+            "brief": [ "Misstänkt för brott: Thomas"],
+            "brott": [ "Förhör datum -", "Tis, kl: 13.37"],
+            "starting": [ "Starta Interregation när redo . . ."]
+        }, 
+        "interrogation": {
+            "first": {
+                "video": "video1_id_3.mp4",
+                "answers": [
+                    {
+                        "preview": "Lek inte dum...",
+                        "message": "Thomas, du behöver ju inte leka dum. Du har varit anhållen för förargelseväckande beteende sju gånger."
+                    },
+                    {
+                        "preview": "Förklara varför...",
+                        "message": "Du är här för att du är misstänkt för att vara inblandad i ett brott som begicks igår."
+                    }
+                ]
+            },
+            "second": {
+                "video": "video2_id_3.mp4",
+                "answers": [ 
+                    {
+                        "preview": "Öppen platsfråga...",
+                        "message": "Och vart befann du dig igår kväll?"
+                    },
+                    {
+                        "preview": "Direkt platsfråga...",
+                        "message": "Var du på matchen igår? "
+                    }
+                ]
+            },
+            "third": {
+                "video": "video3_id_3.mp4",
+                "answers": [ 
+                    {
+                        "preview": "Matchens slut?",
+                        "message": "Vad gjorde du efter matchen var slut till att du kom hem igen?"
+                    },
+                    {
+                        "preview": "Kom hem när?",
+                        "message": "Och vilken tid kom du hem? "
+                    }
+                ]
+            },
+            "fourth": {
+                "video": "video4_id_3.mp4",
+                "answers": [ 
+                    {
+                        "preview": "Följdfråga...",
+                        "message": "Vad betyder sent?"
+                    },
+                    {
+                        "preview": "Mer detaljer...",
+                        "message": "Jag behöver veta detaljer."
+                    }
+                ]            
+            },
+            "fifth": {
+                "video": "video5_id_3.mp4",
+                "answers": [ 
+                    {
+                        "preview": "Direkt...",
+                        "message": "Hur kom du hem?"
+                    },
+                    {
+                        "preview": "Förstående...",
+                        "message": "Ja…det förstår jag. Kom hon och hämtade dig?"
+                    }
+                ]            
+            },
+            "sixth": {
+                "video": "video6_id_3.mp4",
+                "answers": [ 
+                    {
+                        "preview": "Få honom att försäga sig...",
+                        "message": "Vill du tillägga något? "
+                    }
+                ]            
+            },
+            "seventh": {
+                "video": "video7_id_3.mp4",
+                "answers": [ 
+                    {
+                        "preview": "Nu har jag honom...",
+                        "message": "Inte du som?"
+                    }
+                ]
+            },
+            "eighth": {
+                "video": "video8_id_3.mp4",
+                "answers": [ 
+                    {
+                        "preview": "Hur vet han det?",
+                        "message": "Jag nämnde aldrig en näsa"
+                    }
+                ]
+            },
+            "nineth": {
+                "video": "video9_id_3.mp4",
+                "answers": [ 
+                    {
+                        "preview": "Avsluta förhör",
+                        "message": "Vi är färdiga här så du är fri att gå. Hör av dig om du har någon mer information. "
+                    }
+                ]
+            },
+            "tenth": {
+                "video": "video10_id_3.mp4",
+                "answers": null
+            }
+        }   
     },
     {
         "id": 4,
@@ -77,7 +197,7 @@
             "brott": [ "Infomation kring brott,", "Cykelpumpen gör konstiga ljud ifrån sig, det låter som morsekod."],
             "starting": [ "Lyssna och avkoda ordet som meddelas"]
         },
-        "mp3": "enpoint.mp3",
+        "mp3": "morse_5.wav",
         "pussleIMG": "crimescene_4_BA.png"
 
     },
@@ -85,21 +205,46 @@
         "id": 5,
         "name": "Förbjudna Föremål",
         "key_code": "Stora väskor",
-        "answer": "correct",
+        "answer": "inget möjligt svar...",
         "type": "video",
         "manuscript": "",
         "hints": null,
-        "introduction": []
+        "introduction": {
+            "Initilizing": [ "Datalogg: Malmö Polisarkivet."],
+            "fetching": [ "Hämtar relevant data från brottsregistret:", " <span class='highlighted-terminal terminal-connected'>100%</span>"],
+            "brief": [ "Brottsplats: Förbjudna Föremål"],
+            "brott": [ "Infomation kring brott,", "En mystisk person har skådats på övervakningskameror vid stadion"],
+            "starting": [ "Kolla på videon och analysera det som visas."]
+        },
+        "interrogation": {
+            "first": {
+                "video": "video1_id_5.mp4",
+                "answers": null
+            }
+        }
+
     },
     {
         "id": 6,
         "name": "Bajspåsar & Skvallertanter",
         "key_code": "TALLRIKEN",
-        "answer": "correct",
+        "answer": "inget möjligt svar...",
         "type": "video",
         "manuscript": "",
         "hints": null,
-        "introduction": []
+        "introduction": {
+            "Initilizing": [ "Datalogg: Malmö Polisarkivet."],
+            "fetching": [ "Hämtar relevant data från brottsregistret:", " <span class='highlighted-terminal terminal-connected'>100%</span>"],
+            "brief": [ "Vittnes Intervju: Agnetas skvaller"],
+            "brott": [ "Infomation,", "Agneta har saker som hon vill förmedla till polisen. Hon hävdar att hon såg gärningsmannen."],
+            "starting": [ "intervjua Agneta och lyssna på vad hon har att säga."]
+        },
+        "interrogation": {
+            "first": {
+                "video": "video1_id_6.mp4",
+                "answers": null
+            }
+        }
     },
     {
         "id": 7,
@@ -115,10 +260,17 @@
         "id": 8,
         "name": "Margaretas Blomstergata",
         "key_code": "Special Tiger Eye",
-        "answer": "correct",
+        "answer": "ÄR DET VIKTIGT FÖR DAJ",
         "type": "pussle",
         "manuscript": "",
         "hints": null,
-        "introduction": []
+        "introduction": {
+            "Initilizing": [ "Datalogg: Malmö Polisarkivet."],
+            "fetching": [ "Hämtar relevant data från brottsregistret:", " <span class='highlighted-terminal terminal-connected'>100%</span>"],
+            "brief": ["Brottsplats: Margaretas Blomstergata"],
+            "brott": [ "Infomation kring brott,", "Det har hittats ett meddelande i konstig struktur. Det är binära siffor i en specifik uppsättning"],
+            "starting": [ "Hitta mönstret och lista ut vad det står för något"]
+        },
+        "pussleIMG": "crimescene_8_BA.png"
     }
 ]
