@@ -35,11 +35,17 @@ async function render(DOM) {
     DOM.append(nameDiv)
 
 
-    messages.forEach(message => {
-        console.log(messages);
-        message.conversation.sort((a, b) => a.timestamp - b.timestamp);
-        textBuilder(message, DOM)
-    });
+    if (messages.length > 0) {
+        messages.forEach(message => {
+            console.log("message", messages);
+            message.conversation.sort((a, b) => a.timestamp - b.timestamp);
+            textBuilder(message, DOM)
+        });
+
+    } else {
+        DOM.innerHTML = `You have no messages`
+    }
+
 
 }
 

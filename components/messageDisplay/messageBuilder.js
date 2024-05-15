@@ -1,9 +1,6 @@
 
 export function textBuilder(MessageString, parentDOM) {
 
-
-    console.log(MessageString);
-
     let message_time_container = document.createElement("div")
     let TimestampDiv = document.createElement("div")
     let messageContainer = document.createElement("div")
@@ -42,9 +39,5 @@ export function textBuilder(MessageString, parentDOM) {
             messageFromUserDiv.innerHTML = `<p>${conversaion}</p>`;
             messageFromUserDiv.classList.add("messageFromUser")
         })
-
-
-
     });
-
 }
