@@ -2,8 +2,7 @@
     height: 100%;
     overflow-y: scroll;
 
-    display: grid;
-    grid-template-columns: 1fr;
+
 
     padding-bottom: 20px;
     background-color: lightgray;
@@ -92,4 +91,10 @@
     border-bottom: 1px solid black;
     margin: 0 auto;
     margin-top: 30px;
+}
+
+
+#NoMessages {
+    margin-top: 100px;
+    margin-left: 30vw;
 }
