@@ -12,6 +12,8 @@
     border: 2px solid black;
     z-index: 3;
     margin-top: 30px;
+    font-family: var(--mainFont);
+    font-size: var(--fontReg);
     /* background-blend-mode: blur; */
 
 }
@@ -52,8 +54,8 @@
     display: flex;
     justify-content: center;
     gap: 3px;
-
-    font-size: 13px;
+    margin-bottom: 25px;
+    font-size: 14px;
 }
 
 .secondaryAction>em {
