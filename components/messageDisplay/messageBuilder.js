@@ -1,4 +1,5 @@
 
+
 export function textBuilder(MessageString, parentDOM) {
 
     let message_time_container = document.createElement("div")
@@ -22,7 +23,6 @@ export function textBuilder(MessageString, parentDOM) {
     TimestampDiv.classList.add("messagesTime")
 
     MessageString.conversation.forEach(message => {
-
 
         message.ToUser.forEach(conversation => {
             let messageToUserDiv = document.createElement("div");
