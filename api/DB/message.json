@@ -5,42 +5,24 @@
         "conversation": [
             {
                 "ToUser": [
-                    "Its chefen where where are u?",
-                    "how are u?",
-                    "Awnser!"
+                    "Jag fick höra på att du lyckades lösa cyphert på brottsplatsen",
+                    "Vad betydde det?"
                 ],
                 "FromUser": [
-                    "im at home was just gonna take a nap!",
-                    "what do you want?"
+                    "Ja, svaret var ROSENGÅRD.",
+                    "Jag vet inte riktigt vad det betyder än så tänkte höra med dig först."
                 ],
                 "timestamp": 1713763000
             },
             {
                 "ToUser": [
-                    "hello where are u?"
+                    "Hmmm...",
+                    "Det finns ju definitivt en koppling till Zlatan"
                 ],
                 "FromUser": [
-                    "im at home was just gonna take a nap!"
-                ],
-                "timestamp": 1713761000
-            },
-            {
-                "ToUser": [
-                    "hello where are u?"
-                ],
-                "FromUser": [
-                    "im at home was just gonna take a nap!"
-                ],
-                "timestamp": 1713762000
-            },
-            {
-                "ToUser": [
-                    "hello where are u?"
-                ],
-                "FromUser": [
-                    "im at home was just gonna take a nap!"
-                ],
-                "timestamp": 1713760000
+                    "Ja jag tänkte också det, men jag kan bara inte se helheten än, Jag fick också en bokstav. Jag sparar den, tror det kommer vara viktigt senare.",
+                    "Jag fortsätter lösa brottsplatserna."
+                ]
             }
         ]
     },

@@ -69,18 +69,18 @@
         "id": 7,
         "name": "Ketchup & korvar",
         "description": "TBA",
-        "image": null,
-        "hints": "TBA",
+        "image": "crimescene_7_map.png",
+        "hints": "Jag är hungrig…jag ska käka en bamsemeny, och ta en dricka.",
         "location": {
-            "X": 55.579802,   
-            "Y": 12.995841
+            "X": 55.585098,    
+            "Y": 12.987741
         }
     },
     {
         "id": 8,
         "name": "Margaretas Blomstergata",
-        "description": "Le tresor le idfk det är viktigt för maj",
-        "image": "crimescene_6_map.jpeg",
+        "description": "TBA",
+        "image": null,
         "hints": "VIOLA TWIX: --:--",
         "location": {
             "X": 55.5888251,   

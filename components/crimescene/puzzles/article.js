@@ -44,36 +44,16 @@ async function render( DOM ) {
 
         DOM.querySelector( '.hiddenElement').classList.remove( 'hiddenElement');
 
-        // const form = DOM.querySelector( 'form');
-        // const input = form.querySelector( 'input');
+        DOM.querySelector( 'button').onclick = async() => {
 
-        // input.oninput = () => input.value = input.value.toUpperCase();
+            const response = await STATE.Post({
+                entity: 'crimescenes',
+                crimescene_id: id, 
+                user_id: STATE.currentUserID(),
+                crimescene_answer: 'inget möjligt svar...',
+            })
 
-        // form.onsubmit = async(e) => {
-        //     e.preventDefault()
-            
-        //     if( !input.value ) return
-        //     if( input.value != crimescene.answer) return displayInputMessage( input.value, 'Fel vid validation: Fel svar', 'Error');
-            
-        //     displayInputMessage( input.value, 'Sänder svar till server:', 'Loading');
-
-        //     const response = await STATE.Post({
-        //         entity: 'crimescenes',
-        //         crimescene_id: id, 
-        //         user_id: STATE.currentUserID(),
-        //         crimescene_answer: input.value,
-        //     })
-
-        //     if( !response) return displayInputMessage( 'Försök igen', 'Någonting gick snett...', 'Connected');
-
-        //     solvedCrimescene( crimescene, DOM);
-        // }
+            solvedCrimescene( crimescene, DOM);
+        }
     });
 }
-
-// function displayInputMessage( inputContent, message, klass ) {
-//     const inputMessage = document.querySelector( '.inputMessage');
-//     setTimeout(()=>{
-//         inputMessage.innerHTML = `${message} - <span class="highlighted-terminal" style="color:var(--terminal${klass})">${inputContent}</span>`;
-//     }, 200)
-// }

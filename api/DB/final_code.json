@@ -1,0 +1,34 @@
+[
+    {
+        "crime_id": 1,
+        "letter": "T"
+    },
+    {
+        "crime_id": 2,
+        "letter": "Ä"
+    },
+    {
+        "crime_id": 3,
+        "letter": "J"
+    },
+    {
+        "crime_id": 4,
+        "letter": "G"
+    },
+    {
+        "crime_id": 5,
+        "letter": "A"
+    },
+    {
+        "crime_id": 6,
+        "letter": "R"
+    },
+    {
+        "crime_id": 7,
+        "letter": "D"
+    },
+    {
+        "crime_id": 8,
+        "letter": "E"
+    }
+]
