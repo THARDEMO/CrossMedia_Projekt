@@ -35,7 +35,7 @@ async function render(DOM) {
     DOM.append(nameDiv)
 
 
-    if (messenger_id === "1") {
+    if (messenger_id === "3") {
         console.log("hej");
         let message_time_container = document.createElement("div")
         let TimestampDiv = document.createElement("div")
@@ -60,7 +60,7 @@ async function render(DOM) {
 
     console.log(messages);
 
-    if (messages.length > 0 || messenger_id === "1") {
+    if (messages.length > 0 || messenger_id === "3") {
         messages.forEach(message => {
             console.log("message", messages);
             textBuilder(message, DOM)
