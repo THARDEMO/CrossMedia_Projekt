@@ -48,5 +48,15 @@
         "id": "01346789",
         "username": "54321",
         "password": "20f3765880a5c269b747e1e906054a4b4a3a991259f1e16b5dde4742cec2319a"
+    },
+    {
+        "id": "01245789",
+        "username": "hej",
+        "password": "9c478bf63e9500cb5db1e85ece82f18c8eb9e52e2f9135acd7f10972c8d563ba"
+    },
+    {
+        "id": "01345689",
+        "username": "Wille",
+        "password": "d8d3a72d2efdc0466fda18694d149d1cc8dd5c6b64d60260a679a5e566d262c5"
     }
 ]
