@@ -11,8 +11,7 @@
                 "FromUser": [
                     "Ja, svaret var ROSENGÅRD.",
                     "Jag vet inte riktigt vad det betyder än så tänkte höra med dig först."
-                ],
-                "timestamp": 1713763000
+                ]
             },
             {
                 "ToUser": [
@@ -89,6 +88,43 @@
                 "FromUser": [
                     "Ja såklart jag vet det, men min magkänsla säger att det inte var han.",
                     "Han verkade dock kolla på mig konstigt, precis som om han kom ihåg mig men kunde inte placera det. Men som sagt, har sprungit på thomas i stöket ofta."
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "conversation_id": 1,
+        "conversation": [
+            {
+                "ToUser": [
+                    "Såg du artikeln med den kvinnliga konstnären som kritiserade fotbollsförbundet? Veronica något, henne bör du hålla ett öga på"
+                ],
+                "FromUser": [
+                    "Ja jag såg den, vet dock inte om där är tillräckligt med motiv för att bli misstänkt"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "conversation_id": 1,
+        "conversation": [
+            {
+                "ToUser": [
+                    "Du slutar aldrig att imponera! Hur har du lärt dig morse kod?"
+                ],
+                "FromUser": [
+                    "Tack Chefen, jag och polarna hade alldeles för mycket fritid när vi var små",
+                    "svaret på morse koden var MILAN"
+                ]
+            },
+            {
+                "ToUser": [
+                    "Zlatan har ju spelat fotboll där"
+                ],
+                "FromUser": [
+                    "precis, allt verkar vara sammankopplat"
                 ]
             }
         ]
