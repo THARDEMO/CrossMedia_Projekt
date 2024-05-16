@@ -2,6 +2,7 @@ import * as cManager from '../cManager.js'
 import * as STATE from '../../Logic/state.js';
 import { textBuilder } from "./messageBuilder.js";
 import { NavComp } from '../../identities/nav/nav.js';
+import { timestampSorter } from '../../Logic/timestampSorter.js';
 
 
 
@@ -21,7 +22,7 @@ async function render(DOM) {
     const name = urlParams.get('name');
     const messenger_id = urlParams.get(`message_id`)
 
-    const messages = await STATE.Get(
+    const Messages = await STATE.Get(
         {
             entity: 'messages',
             id: STATE.currentUserID(),
@@ -55,11 +56,13 @@ async function render(DOM) {
         messageToUserDiv.classList.add("messageToUser")
     }
 
+    let messages = timestampSorter(Messages)
+
+    console.log(messages);
 
     if (messages.length > 0 || messenger_id === "1") {
         messages.forEach(message => {
             console.log("message", messages);
-            message.conversation.sort((a, b) => a.timestamp - b.timestamp);
             textBuilder(message, DOM)
         });
 
@@ -67,13 +70,7 @@ async function render(DOM) {
         DOM.innerHTML = `<p id="NoMessages">You have no messages.</p>`
     }
 
-    window.scrollTo( 100, 100)
-
-    let parentNode = document.querySelector(`#messageDisplay`)
-    let specificChildNode = parentNode.childNodes[1];
-    parentNode.insertBefore(specificChildNode, null)
-
-
+    window.scrollTo(100, 100)
 
 
 }
