@@ -32,7 +32,7 @@
 
             foreach( $all_crimescenes as $crimescene) 
             {
-                if( $crimescene['key_code'] != $code) continue;
+                if( strtolower($crimescene['key_code']) != strtolower($code)) continue;
                 send_JSON( ["crime_id" => $crimescene['id']]);
             }
 

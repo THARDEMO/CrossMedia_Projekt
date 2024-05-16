@@ -61,7 +61,7 @@
     },
     {
         "id": 3,
-        "name": "Mff-supportern intervju",
+        "name": "Mff-supportern Förhör",
         "key_code": "SVEN-ÅKE NILSSON",
         "answer": "inget möjligt svar...",
         "type": "video",
@@ -226,7 +226,7 @@
     },
     {
         "id": 6,
-        "name": "Bajspåsar & Skvallertanter",
+        "name": "Agnetas intervju",
         "key_code": "TALLRIKEN",
         "answer": "inget möjligt svar...",
         "type": "video",
@@ -249,8 +249,8 @@
     {
         "id": 7,
         "name": "Ketchup & korvar",
-        "key_code": "TBA",
-        "answer": "correct",
+        "key_code": "95",
+        "answer": "inget möjligt svar...",
         "type": "sound",
         "manuscript": "",
         "hints": null,

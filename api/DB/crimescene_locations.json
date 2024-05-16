@@ -2,9 +2,9 @@
     {
         "id": 1,
         "name": "Kryptiska Färger",
-        "description": "Ta dig till till den markerade platsen och lös det kryptiska meddelandet som har lämnats i färger. Plats Södra läktaren gamla stadion...",
+        "description": "Polisen har hittat ett kryptiskt meddelande som har lämnats i färger. Logga in i brottsassistenten och lös cyphert.",
         "image": "crimescene_1_map.png",
-        "hints": "kod i ASCII = 70 75 82 88",
+        "hints": "koden i ASCII värden = 70 75 82 88",
         "location": {
             "X": 55.58487,
             "Y": 12.98918
@@ -23,10 +23,10 @@
     },
     {
         "id": 3,
-        "name": "Walk of fame",
-        "description": "Du möter upp en MFF-supporter som är villig till att ge en intervju för att hjälpa till med fallet. Han uppger att han har information och har sagt att ni ska mötas vid Idrottens Walk of Fame.",
+        "name": "Mff-supportern Förhör",
+        "description": "Polisen har kallat en MFF supporter på ett förhör, han har en bakgrund av att vara stökig så din uppgift är att ta reda på vad han vet om vandalismen",
         "image": null,
-        "hints": "Känd Cyklist",
+        "hints": "--- CYKEL",
         "location": {
             "X": 55.5847719,
             "Y": 12.9886964 
@@ -56,7 +56,7 @@
     },
     {
         "id": 6,
-        "name": "Bajspåsar & Skvallertanter",
+        "name": "Agnetas intervju",
         "description": "I parken möter du en äldre dam som presenterar sig själv som Agneta. Agneta är ute och rastar sin hund och är välkänd som områdets skvallertant. Du frågar henne i hopp om att hon har sett något av intresse.",
         "image": "crimescene_6_map.jpeg",
         "hints": "Pildammarnas sfär",
@@ -79,7 +79,7 @@
     {
         "id": 8,
         "name": "Margaretas Blomstergata",
-        "description": "TBA",
+        "description": "Ännu ett pussel har hittats av Polisen, denna gången är det uppbyggt av massvis binära nummer, din uppgift är att hitta mönstret i pusslet.",
         "image": null,
         "hints": "VIOLA TWIX: --:--",
         "location": {
