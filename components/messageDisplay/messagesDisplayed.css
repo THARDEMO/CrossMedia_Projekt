@@ -90,4 +90,6 @@
 #NoMessages {
     margin-top: 100px;
     margin-left: 30vw;
+    border-bottom: 1px solid black;
+    width: 151px;
 }
