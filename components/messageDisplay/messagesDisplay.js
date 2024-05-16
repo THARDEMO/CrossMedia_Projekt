@@ -46,6 +46,7 @@ async function render(DOM) {
         DOM.innerHTML = `<p id="NoMessages">You have no messages.</p>`
     }
 
+    window.scrollTo( 100, 100)
 
 }
 

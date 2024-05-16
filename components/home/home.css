@@ -61,4 +61,23 @@
         background: linear-gradient(0deg, rgba(203,204,218,1) 0%, rgb(228, 231, 255) 75%);
 
     }
+
+    .codeContainer {
+        position: fixed;
+        bottom: 0;
+
+        display: flex;
+        justify-content: space-evenly;
+
+        width: 100%;
+        background: var( --policeBlue);
+        padding: 1rem;
+        
+        & p {
+            font-family: var( --mainFont);
+            color: var(--textColor);
+            font-size: var(--fontBig);
+            text-align: center;
+        }
+    }
 }

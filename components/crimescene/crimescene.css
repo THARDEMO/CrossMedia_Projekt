@@ -83,14 +83,14 @@
             background: var(--terminalHl);
         }
 
-        & button {
-            font-size: 20px;
-            color: var(--terminalTxt);
-            font-family: 'customFont';
-            background: none;
-        }
     }
-
+    
+    & button {
+        font-size: 20px;
+        color: var(--terminalTxt);
+        font-family: 'customFont';
+        background: none;
+    }
     & .hiddenElement {
         display: none;
     }
@@ -118,7 +118,7 @@
         & .restartCM {
             background-image: url("data:image/svg+xml,%3Csvg width='54' height='54' viewBox='0 0 54 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.5 16.9214L14 16.9214L14 42L40.5 42L40.5 16.9214L25.5 16.9214M25.5 16.9214L31 11.4214M25.5 16.9214L31 22.4214' stroke='white' stroke-width='3'/%3E%3C/svg%3E%0A");
             
-            background-color: rgb(233, 155, 10);
+            background-color: rgb(206, 155, 59);
             border: 2px solid rgb(142, 98, 15);
             border-top: 2px solid rgb(236, 188, 99);
             border-left: 2px solid rgb(236, 188, 99);
@@ -127,7 +127,7 @@
         & .exitCM {
             
             background-image: url("data:image/svg+xml,%3Csvg width='54' height='54' viewBox='0 0 54 54' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.5845 16.9214L14 16.9214L14 42L40.5 42L40.5 16.9214L32.2887 16.9214' stroke='white' stroke-width='3'/%3E%3Cpath d='M27 11L27 25' stroke='white' stroke-width='3'/%3E%3C/svg%3E%0A");
-            background-color: rgb(157, 13, 13);
+            background-color: rgb(143, 44, 44);
             border: 2px solid rgb(101, 7, 7);
             border-top: 2px solid  rgb(226, 54, 54);
             border-left: 2px solid rgb(226, 54, 54);

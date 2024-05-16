@@ -104,7 +104,7 @@ async function endPhase( DOM, crimescene ) {
         entity: 'crimescenes',
         crimescene_id: crimescene.id, 
         user_id: STATE.currentUserID(),
-        crimescene_answer: 'correct',
+        crimescene_answer: 'inget möjligt svar...',
     })
 
     console.log( response);

@@ -26,12 +26,23 @@
 
 
 #messenger {
-    margin-left: 10px;
+    /* margin-left: 10px; */
     display: flex;
-    justify-content: center;
+    width: 100%;
+
+    /* justify-content: center; */
     align-items: center;
 }
 
-#messenger>p:nth-child(2) {
-    margin-left: 30px;
+#messenger>p {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-between;
+    margin: 0 1.5rem;
+}
+
+#messenger>p::after {
+    display: block;
+    content: '→';
 }

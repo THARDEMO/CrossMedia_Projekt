@@ -56,18 +56,19 @@ async function render(DOM) {
 function renderNoteEntry( DOM, note ) {
 
     const dateformat = formatDate( note.timestamp);
-    
-    DOM.innerHTML+= `
-        <article id="note_${note.id}">
-            <h3>Datalogg: ${note.heading}</h3>
-            <h4><em>${dateformat}</em></h4>
-            <div class="textcontainer"></div>
-        </article>
+    const noteDOM = document.createElement( 'article');
+    noteDOM.id = note.id;
+
+    noteDOM.innerHTML+= `
+        <h3>Datalogg: ${note.heading}</h3>
+        <h4><em>${dateformat}</em></h4>
+        <div class="textcontainer"></div>
     `;
 
-    const textContainer = DOM.querySelector( `#note_${note.id} > .textcontainer`);
-
+    const textContainer = noteDOM.querySelector( `.textcontainer`);
     note['notes'].forEach( n => textContainer.innerHTML += `<p>${n}</p>`);
+
+    DOM.prepend( noteDOM)
 }
 
 

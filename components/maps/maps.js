@@ -27,8 +27,9 @@ async function render( DOM ) {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
+    console.log( user_solved)
 
-    locations.forEach(location => addMarker(map, location, user_solved.includes( location.id)));
+    locations.forEach(location => addMarker(map, location, user_solved.map(s=>+s['crime_id']).includes( +location.id)));
 
     DOM.append( mapContainer);
 

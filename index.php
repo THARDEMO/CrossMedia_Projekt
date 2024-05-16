@@ -31,7 +31,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CrossMedia Project</title>
+        <title>Hitta Näsan</title>
         <link rel="stylesheet" href="./index.css">
         <?php echo importStyles( $path ) ?>
         <?php echo importStyles( "./identities" ) ?>

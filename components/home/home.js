@@ -21,6 +21,9 @@ async function render(DOM) {
     DOM.innerHTML = loading( DOM);
 
     const notis = await STATE.Get({entity: 'notifications', id: STATE.currentUserID()});
+    const code = await STATE.Get({entity: 'code', id: STATE.currentUserID()});
+
+    console.log( code);
 
     PubSub.publish
     ({
@@ -51,8 +54,24 @@ async function render(DOM) {
     }
 
 
-    const bottomContainer = document.createElement( 'footer');
-    bottomContainer.classList.add( 'uselessinformation');
+    const codeContainer = document.createElement( 'footer');
+    codeContainer.classList.add( 'codeContainer');
+    codeContainer.innerHTML = `
+        <p id="code_1">-</p>
+        <p id="code_2">-</p>
+        <p id="code_3">-</p>
+        <p id="code_4">-</p>
+        <p id="code_5">-</p>
+        <p id="code_6">-</p>
+        <p id="code_7">-</p>
+        <p id="code_8">-</p>    
+    `;
 
+    code.forEach( c=>{
+        const p = codeContainer.querySelector( `#code_${c.crime_id}`);
+        p.textContent = c.letter;
+    })
+
+    DOM.append( codeContainer)
 
 }
