@@ -30,13 +30,5 @@
     {
         "message_id": 9,
         "crime_id": 8
-    },
-    {
-        "message_id": 13,
-        "crime_id": 2
-    },
-    {
-        "message_id": 14,
-        "crime_id": 4
     }
 ]

@@ -5,53 +5,13 @@
         "password": null
     },
     {
-        "id": "01234689",
-        "username": "test",
-        "password": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
-    },
-    {
-        "id": "02456789",
-        "username": "test",
-        "password": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
-    },
-    {
         "id": "01234789",
         "username": "DeoHard",
         "password": "d938aa664643102fdec4c8f6d209271a662b2f3525e24127daab55fbbce21898"
     },
     {
-        "id": "01234678",
-        "username": "Choso",
-        "password": "bf4b365e39434a198272cea53cb0fdc6d4c4eb6fb31cb9ac410fcf379e0f04fe"
-    },
-    {
         "id": "02345789",
         "username": "Wille",
         "password": "d8d3a72d2efdc0466fda18694d149d1cc8dd5c6b64d60260a679a5e566d262c5"
-    },
-    {
-        "id": "01234578",
-        "username": "12345",
-        "password": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
-    },
-    {
-        "id": "12345679",
-        "username": "TEST",
-        "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
-    },
-    {
-        "id": "01245678",
-        "username": "3213",
-        "password": "fe6340be87fd5e43b7f0cac5741e76205dd69a68b2024fda16c696848a720f7a"
-    },
-    {
-        "id": "01346789",
-        "username": "54321",
-        "password": "20f3765880a5c269b747e1e906054a4b4a3a991259f1e16b5dde4742cec2319a"
-    },
-    {
-        "id": "02356789",
-        "username": "hello",
-        "password": "486ea46224d1bb4fb680f34f7c9ad96a8f24ec88be73ea8e5a6c65260e9cb8a7"
     }
 ]

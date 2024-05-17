@@ -35,8 +35,37 @@ async function render(DOM) {
     DOM.append(nameDiv)
 
 
+    if (messenger_id === "1") {
+        let message_time_container = document.createElement("div")
+        let TimestampDiv = document.createElement("div")
+        let messageContainer = document.createElement("div")
+
+        DOM.append(message_time_container)
+        message_time_container.append(TimestampDiv)
+        message_time_container.append(messageContainer)
+
+        TimestampDiv.innerHTML = `<p>07:05</p>`
+        message_time_container.classList.add("message_time_Container")
+        messageContainer.classList.add("messageContainer")
+        TimestampDiv.classList.add("messagesTime")
+
+        const messages = [
+            { text: "Var matchen bra igår eller ?", class: "messageToUser" },
+            { text: "Sjukt bra, men är trött idag…", class: "messageFromUser" },
+            { text: "Släng i dig en kaffe det är dags att jobba.", class: "messageToUser" }
+        ];
+
+        messages.forEach(message => {
+            const messageDiv = document.createElement("div");
+            messageDiv.innerHTML = `<p>${message.text}</p>`;
+            messageDiv.classList.add(message.class);
+            messageContainer.append(messageDiv);
+        });
+    }
+
+
+
     if (messenger_id === "3") {
-        console.log("hej");
         let message_time_container = document.createElement("div")
         let TimestampDiv = document.createElement("div")
         let messageContainer = document.createElement("div")
@@ -52,7 +81,9 @@ async function render(DOM) {
 
         let messageToUserDiv = document.createElement("div");
         messageContainer.append(messageToUserDiv)
+
         messageToUserDiv.innerHTML = `<p>När är du hemma?</p>`;
+
         messageToUserDiv.classList.add("messageToUser")
     }
 
@@ -60,7 +91,7 @@ async function render(DOM) {
 
     console.log(messages);
 
-    if (messages.length > 0 || messenger_id === "3") {
+    if (messages.length > 0 || messenger_id === "3" || messenger_id === "1") {
         messages.forEach(message => {
             console.log("message", messages);
             textBuilder(message, DOM)
