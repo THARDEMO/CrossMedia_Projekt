@@ -7,6 +7,7 @@ import { terminal } from './terminal/terminal.js';
 import { interrogations } from './interrogation/interrogation.js';
 import { puzzle } from './puzzles/puzzle.js';
 import { article } from './puzzles/article.js';
+import { ending } from './detvarjag/ending.js';
 
 export const component = {
     domID: 'CrimeScenes',
@@ -37,6 +38,7 @@ async function render(DOM) {
         case '6': return interrogations.preRender( id ); 
 
         case '8': return puzzle.preRender( id ); 
+        case 'detvarjag': return ending.preRender()
         // case '4': return puzzle.preRender( id );
 
         default: DOM.innerHTML = `Crimescene::${id} Does not exist?!?! What are you doing here officer??`;

@@ -58,5 +58,20 @@
         "crime_id": "2",
         "user_id": "02345789",
         "timestamp": 1715854128
+    },
+    {
+        "crime_id": 3,
+        "user_id": "02356789",
+        "timestamp": 1715856619
+    },
+    {
+        "crime_id": "8",
+        "user_id": "02356789",
+        "timestamp": 1715858923
+    },
+    {
+        "crime_id": 6,
+        "user_id": "02356789",
+        "timestamp": 1715859039
     }
 ]

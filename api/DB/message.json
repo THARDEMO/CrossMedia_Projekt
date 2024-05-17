@@ -27,23 +27,6 @@
         ]
     },
     {
-        "id": 2,
-        "conversation_id": 1,
-        "conversation": [
-            {
-                "ToUser": [
-                    "Hej, bra jobbat på brottsplatsen, det var en smart lösning på det kluriga problemet",
-                    "Kämpa på poliskåren lägger stor vikt på dina axlar!"
-                ],
-                "FromUser": [
-                    "im at home was just gonna take a nap!",
-                    "what do you want?"
-                ],
-                "timestamp": 1713769273
-            }
-        ]
-    },
-    {
         "id": 3,
         "conversation_id": 3,
         "conversation": [
@@ -90,6 +73,145 @@
                     "Ja såklart jag vet det, men min magkänsla säger att det inte var han.",
                     "Han verkade dock kolla på mig konstigt, precis som om han kom ihåg mig men kunde inte placera det. Men som sagt, har sprungit på thomas i stöket ofta."
                 ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "conversation_id": 1,
+        "conversation": [
+            {
+                "ToUser": [
+                    "Jag ska beställa ny utrustning till kåren nu, är det någonting specifikt du behöver?"
+                ],
+                "FromUser": [
+                    "Najs, jag behöver byxor i strl L och en ny vinterjacka",
+                    "Tror jag tappade bort mina hanskar igår också så kan du också beställa ett par av dem till mig?"
+                ]
+            },
+            {
+                "ToUser": [
+                    "Noterat! Det bör levereras inom denna veckan",
+                    "Hur gick det med övervakningskameran, kunde man se någonting?"
+                ],
+                "FromUser": [
+                    "Det var väldigt svårt att se men jag tror att vandalen fångades på film, han var dock maskerad så kunde inte utgöra detaljer.",
+                    "Men någonting lämnades kvar, borde kanske kolla på videon igen och se vad exakt."
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "conversation_id": 2,
+        "conversation": [
+            {
+                "ToUser": [
+                    "Tjjjeeeenare! Läget mannen",
+                    "Det var längesedan."
+                ],
+                "FromUser": [
+                    "Hallå Pelle! Hur är det uppe i göteborg! Poliskåren lika trevlig där?"
+                ]
+            },
+            {
+                "ToUser": [
+                    "Jodå alltid lika spännande fall här uppe, men inte som du har just nu!",
+                    "Hur går det med att hitta individen som snodde näsan?"
+                ],
+                "FromUser": [
+                    "Jag jobbar hårt på det, ska fan sätta dit vandalen. Men det är kanske inte alltid lika spännande som det låter.",
+                    "Hade nyss en intervju med områdets skvallertant, riktigt kakel men hon gav mig endå bra information"
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "conversation_id": 1,
+        "conversation": [
+            {
+                "ToUser": [
+                    "Vad hade agneta att säga?"
+                ],
+                "FromUser": [
+                    "Inte mycket, det vanliga skvallret som vi får in av larmcentralen från henne.",
+                    "Det handlade tydligen om att hon hade sett Korvgubben spruta ner statyn men massvis av ketchup. Något som var helt nytt till oss."
+                ]
+            },
+            {
+                "ToUser": [
+                    "Ja jag förstår, men det är en del av jobbet",
+                    "Vi måste lyssna på allt och alla för det kan ligga en sanning i det hon säger."
+                ],
+                "FromUser": [
+                    "Du har helt rätt, men korvgubben har också en röst, vi kan inte förneka den heller.",
+                    "Jag ska fortsätta undersökningen."
+                ]
+            }
+        ] 
+    },
+    {
+        "id": 8,
+        "conversation_id": 2,
+        "conversation": [
+            {
+                "ToUser": [
+                    "Yo kommer du ihåg cyphers som vi brukade göra som små?",
+                    "Påminner det inte lite om det som hittas nu gällande vandlismen?"
+                ],
+                "FromUser": [
+                    "Kanske har ej tänkt på det."
+                ]
+            },
+            {
+                "ToUser": [ 
+                    "Är det inte värt att undersöka då? Det verkar ju vara en solklar ledtråd!"
+                ],
+                "FromUser": [
+                    "Tror inte det."
+                ]
+            },
+            {
+                "ToUser": [
+                    "Är du helt säker? det känns som det kan vara relevant?"
+                ],
+                "FromUser": [
+                    "Ja och nej."
+                ]
+
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "conversation_id": 1,
+        "conversation": [
+            {
+                "ToUser": [
+                    "Vad stod det i koden som du nyss löste?"                
+                ],
+                "FromUser": [
+                    "ÄR DET VIKTIGT FÖR DAJ"
+                ]
+            },
+            {
+                "ToUser": [ 
+                    "Vad menar du med det? Det är superviktigt för mig! Du kan inte prata sådär med din CHEF!"
+                ],
+                "FromUser": [
+                    "Zlatans quote, 'Är det viktigt för daj' det var det det stod i koden..."
+                ]
+            },
+            {
+                "ToUser": [
+                    "Jaha, bra jobbat då! Du får ursäkta mig för mitt antagande och utbrott.",
+                    "Vandalen verkar tycka det är kul att få polisen att springa runt och lösa pussel."
+                ],
+                "FromUser": [
+                    "Ja verkligen, vi måste få tag på personen snart."
+                ]
+
             }
         ]
     }

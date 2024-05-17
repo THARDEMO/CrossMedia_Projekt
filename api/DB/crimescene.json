@@ -272,5 +272,15 @@
             "starting": [ "Hitta mönstret och lista ut vad det står för något"]
         },
         "pussleIMG": "crimescene_8_BA.png"
+    },
+    {
+        "id": "detvarjag",
+        "name": "Det var Jag...",
+        "key_code": "DET VAR JAG",
+        "alternatives": [
+            "Erkänn",
+            "Radera Bevis",
+            "Sätt dit någon annan"
+        ]
     }
 ]
