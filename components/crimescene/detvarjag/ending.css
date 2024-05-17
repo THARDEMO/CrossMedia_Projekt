@@ -1,0 +1,52 @@
+#Ending {
+
+
+    & .optionsContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+
+        padding: 3rem 0;
+
+        & button:first-child {
+            color: rgb(25, 137, 25);
+        }
+        
+        & button {
+            color: rgb(189, 51, 1);
+            background: var(--terminalHl);
+        }
+
+        & button:last-child
+        {
+            color: rgb(191, 8, 8);
+        }
+    }
+
+
+}
+.goodending, 
+.badending {
+    transition: transform .7s ease-in-out;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    & picture {
+        width: 100%;
+        height: 100%;   
+        
+        & img {
+            width: 100%;
+            height: 100%; 
+            object-fit: cover;  
+        }
+    }
+}
+
+.hiddenEnding {
+    transform: translateX( -100%);
+}

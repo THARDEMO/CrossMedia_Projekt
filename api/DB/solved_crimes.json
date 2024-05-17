@@ -3,5 +3,40 @@
         "crime_id": 1,
         "user_id": 7,
         "timestamp": 124345544
+    },
+    {
+        "crime_id": "1",
+        "user_id": "01234789",
+        "timestamp": 1715935002
+    },
+    {
+        "crime_id": "2",
+        "user_id": "01234789",
+        "timestamp": 1715935079
+    },
+    {
+        "crime_id": 3,
+        "user_id": "01234789",
+        "timestamp": 1715935230
+    },
+    {
+        "crime_id": "4",
+        "user_id": "01234789",
+        "timestamp": 1715935389
+    },
+    {
+        "crime_id": 5,
+        "user_id": "01234789",
+        "timestamp": 1715935458
+    },
+    {
+        "crime_id": 6,
+        "user_id": "01234789",
+        "timestamp": 1715935571
+    },
+    {
+        "crime_id": "8",
+        "user_id": "01234789",
+        "timestamp": 1715935681
     }
 ]
