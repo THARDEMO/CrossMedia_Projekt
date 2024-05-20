@@ -120,7 +120,7 @@
                 ],
                 "FromUser": [
                     "Jag jobbar hårt på det, ska fan sätta dit vandalen. Men det är kanske inte alltid lika spännande som det låter.",
-                    "Hade nyss en intervju med områdets skvallertant, riktigt kakel men hon gav mig endå bra information"
+                    "Hade nyss en intervju med områdets skvallertant, riktigt kackel men hon gav mig endå bra information"
                 ]
             }
         ]
@@ -148,7 +148,7 @@
                     "Jag ska fortsätta undersökningen."
                 ]
             }
-        ] 
+        ]
     },
     {
         "id": 8,
@@ -164,7 +164,7 @@
                 ]
             },
             {
-                "ToUser": [ 
+                "ToUser": [
                     "Är det inte värt att undersöka då? Det verkar ju vara en solklar ledtråd!"
                 ],
                 "FromUser": [
@@ -178,7 +178,6 @@
                 "FromUser": [
                     "Ja och nej."
                 ]
-
             }
         ]
     },
@@ -188,14 +187,14 @@
         "conversation": [
             {
                 "ToUser": [
-                    "Vad stod det i koden som du nyss löste?"                
+                    "Vad stod det i koden som du nyss löste?"
                 ],
                 "FromUser": [
                     "ÄR DET VIKTIGT FÖR DAJ"
                 ]
             },
             {
-                "ToUser": [ 
+                "ToUser": [
                     "Vad menar du med det? Det är superviktigt för mig! Du kan inte prata sådär med din CHEF!"
                 ],
                 "FromUser": [
@@ -210,7 +209,6 @@
                 "FromUser": [
                     "Ja verkligen, vi måste få tag på personen snart."
                 ]
-
             }
         ]
     },
