@@ -47,8 +47,9 @@ function render(DOM) {
                 </li>
                 <li>
                     <h4>BrottsAssistent</h4>
-                    <p>Polisens nya assistent som hjälper till att presentera brottsplatser. Varje brottplats har ett lösenord kopplat till sig. Ta reda på dem och slå in det i terminalen.</p>
+                    <p>Polisens nya assistent som hjälper till att presentera brottsplatser. Varje brottplats har ett lösenord kopplat till sig. Ta reda på dem och slå in det i terminalen. När en brottsplats är löst klickar man på den röda knappen för att avsluta och komma ifrån vyn</p>
                     <p><em>Brottsassistenten presenterar brottet och vägleder dig vad som ska göras</em></p>
+                    
                 </li>
                 <li>
                     <h4>Inställningar</h4>
@@ -63,6 +64,8 @@ function render(DOM) {
             <p>Malmös Poliskår litar på dig!</p>
 
             <p style="text-align:center"><em>Nya poliser behöver registrera ett konto<br>*Lösenordsuppgifter krypteras och sparas säkert i polisens interna system*</em></p>
+
+         
         </div>
 
         <div id="LRButtonContainer"> 

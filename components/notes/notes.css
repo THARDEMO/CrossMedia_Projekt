@@ -6,7 +6,7 @@
     & .notesContainer {
         padding: 0 1rem;
 
-        font-family: var( --mainFont);
+        font-family: var(--mainFont);
 
         & article:first-child {
             margin-top: .5rem;
@@ -17,12 +17,12 @@
             margin-bottom: 2rem;
             border-bottom: 2px dotted rgba(0, 0, 0, 0.648);
 
-            
+
             & h3 {
                 font-weight: normal;
                 font-size: var(--fontReg);
             }
-        
+
             & h4 {
                 font-weight: normal;
                 color: rgba(0, 0, 0, 0.648);
@@ -42,7 +42,7 @@
         left: 0;
         width: 100%;
 
-        background-color: var( --policeBlue);
+        background-color: var(--policeBlue);
         font-family: var(--mainFont);
         color: rgba(255, 255, 255, 0.699);
 
